@@ -16,7 +16,7 @@ body {
 
 /* Container */
 .container {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6); /* Weniger Transparenz für besseren Hintergrundsicht */
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -51,6 +51,9 @@ body {
     text-align: center;
     font-size: 1.2rem;
     border: 2px solid black; /* Schwarze Umrandung */
+    width: 80%; /* Links größer machen, damit sie auf mobilen Geräten leichter zu klicken sind */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .link:hover {
@@ -77,7 +80,6 @@ body {
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Grüner Glow */
 }
 
-
 /* Responsives Design */
 @media (max-width: 600px) {
     .container {
@@ -90,7 +92,7 @@ body {
     }
 
     .link {
-        font-size: 1rem;
-        padding: 12px;
+        font-size: 1.2rem; /* Größere Schriftgröße für Links */
+        padding: 15px; /* Größere Schaltflächen für mobile Geräte */
     }
 }
