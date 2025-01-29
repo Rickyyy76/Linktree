@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Statt height 100vh, um bei Bedarf mehr Platz zu lassen */
     flex-direction: column;
     padding: 20px;
 }
