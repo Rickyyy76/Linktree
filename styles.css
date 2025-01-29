@@ -65,15 +65,17 @@ body {
 
 /* Footer */
 .footer {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: white;
     position: relative;
     margin-top: 20px;
     text-align: center;
     width: 100%;
-    -webkit-text-stroke: 1px black;
-    text-stroke: 1px black;
+    text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.6);
+    font-weight: bold;
+    -webkit-text-stroke: 0.8px black; /* Dünnere Umrandung, um Glitch zu vermeiden */
 }
+
 
 /* Responsives Design */
 @media (max-width: 600px) {
