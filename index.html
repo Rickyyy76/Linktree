@@ -1,143 +1,64 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('background-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-    padding: 20px;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rickyyy´s Linktree</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title outlined-text">
+            <img src="purpletree.png" alt="Gengar GIF" class="gengar-gif" /> Rickyyy´s Linktree 
+            <img src="purpletree.png" alt="Gengar GIF" class="gengar-gif" />
+        </h1>
 
-/* Container */
-.container {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    color: white;
-    border: 3px solid black;
-}
-
-/* Überschrift Style */
-.title {
-    font-size: 2rem;
-    color: #D3D3D3;
-    text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);
-    -webkit-text-stroke: 1.5px black;
-    text-stroke: 1.5px black;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-/* Grüner Glow für Palmen-Emojis */
-.green-glow {
-    text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
-}
-
-/* Links Style */
-.link {
-    display: block;
-    margin: 12px 0;
-    padding: 15px;
-    background: linear-gradient(145deg, #000000, #32CD32);
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    text-align: center;
-    font-size: 1.4rem;
-    border: 2px solid black;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-text-stroke: 1px black;
-    text-stroke: 1px black;
-    text-shadow: none;
-}
-
-.link:hover {
-    background: linear-gradient(145deg, #32CD32, #000000);
-    transform: scale(1.05);
-}
-
-/* Instagram GIF Style */
-.link img {
-    width: 30px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-/* GIF Container */
-.gif-container {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.gif-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Sektionen */
-.section {
-    margin-top: 25px;
-}
-
-/* Footer */
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
-
-.footer {
-    font-size: 1rem;
-    color: black;
-    position: relative;
-    margin-top: 20px;
-    text-align: center;
-    width: 100%;
-    font-family: 'UnifrakturCook', cursive;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
-}
-
-/* Bilder in der Überschrift richtig ausrichten */
-.gengar-gif {
-    height: 40px;
-    width: auto;
-}
-
-/* Responsives Design */
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
-        padding: 20px;
-    }
-    
-    .title {
-        font-size: 1.8rem;
-        flex-wrap: nowrap;
-    }
-
-    .link {
-        font-size: 1.2rem;
-        padding: 15px;
-    }
-
-    .gengar-gif {
-        height: 30px;
-    }
-}
-
+        
+        <!-- GIF Container -->
+        <div class="gif-container">
+            <img src="4horsemen.gif" alt="Mein GIF" />
+        </div>
+        
+        <div class="section">
+            <h2 class="title outlined-text">
+                <img src="coco_gengarsprite.gif" alt="Gengar" class="gengar-gif" /> Social Media 
+                <img src="coco_gengarsprite.gif" alt="Gengar" class="gengar-gif" />
+            </h2>
+            <a href="https://www.instagram.com/76.rickyyy" class="link outlined-text" target="_blank">
+                <img src="x660.gif" alt="Skull GIF" class="button-gif" /> Instagram
+            </a>
+        </div>
+        
+        <div class="section">
+            <h2 class="title outlined-text">
+                <img src="092.gif" alt="Crypto GIF" class="crypto-gif" /> Crypto/Trading 
+                <img src="092.gif" alt="Crypto GIF" class="crypto-gif" />
+            </h2>
+            <a href="https://claimyoursol.com/Q1etEf6yhhwrpzD2WfLU" class="link outlined-text" target="_blank">
+                <img src="new_avatar_by_emomamonsk.gif" alt="Skull GIF" class="button-gif" /> Solana Reclaim
+            </a>
+            <a href="https://photon-sol.tinyastro.io/@Rickyyy" class="link outlined-text" target="_blank">
+                <img src="new_avatar_by_emomamonsk.gif" alt="Skull GIF" class="button-gif" /> Photon Trading
+            </a>
+            <a href="https://photon-sol.tinyastro.io/@Rickyyy" class="link outlined-text" target="_blank">
+                <img src="new_avatar_by_emomamonsk.gif" alt="Skull GIF" class="button-gif" /> Trojan Telegram Bot
+            </a>
+            <a href="https://t.me/BullxBetaBot?start=access_6LJGBLG961O" class="link outlined-text" target="_blank">
+                <img src="new_avatar_by_emomamonsk.gif" alt="Skull GIF" class="button-gif" /> Bullx.io Telegram Bot
+            </a>
+            <a href="https://t.me/gmgnaibot?start=i_JfVZEhJp" class="link outlined-text" target="_blank">
+                <img src="new_avatar_by_emomamonsk.gif" alt="Skull GIF" class="button-gif" /> GMGN Telegram Bot
+            </a>
+            <a href="https://gmgn.ai/?ref=JfV" class="link outlined-text" target="_blank">
+                <img src="new_avatar_by_emomamonsk.gif" alt="Skull GIF" class="button-gif" /> GMGN Web Link
+            </a>
+            <div class="gif-container">
+                <img src="hastur.gif" alt="crypto-gif" />
+            </div>
+        </div>
+    </div>
+    <div class="footer outlined-text">Made by Rickyyy76
+    </div><img src="chaunter.gif" alt="Gengar" class="gengar-gif" />
+</body>
+</html>
