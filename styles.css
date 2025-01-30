@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     padding: 20px;
+    background-repeat: no-repeat;  /* Verhindert das wiederholte Anzeigen des Hintergrunds */
 }
 
 /* Container */
@@ -38,9 +39,17 @@ body {
     margin-bottom: 15px;
 }
 
-/* GIF für Gengar und Skull */
-.gengar-gif, .button-gif {
-    width: 25px;  /* Geringere Größe auf mobilen Geräten */
+/* GIF für Social Media Titel */
+.gengar-gif {
+    width: 30px; /* Größe anpassen */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* GIF für Links Buttons */
+.button-gif {
+    width: 25px;  /* Größe für das GIF in den Links */
     height: auto;
     vertical-align: middle;
     margin-right: 10px;
