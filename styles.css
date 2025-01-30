@@ -1,19 +1,17 @@
-/* Hintergrundbild anpassen */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-image: url('background-image.jpg');
-    background-size: cover;  /* Stellt sicher, dass das Bild den Bildschirm abdeckt */
-    background-position: center center;  /* Zentriert das Bild */
-    background-attachment: fixed;
+    background-size: cover; /* Stellt sicher, dass das Bild immer den gesamten Bildschirm abdeckt */
+    background-position: center;
+    background-attachment: scroll; /* Ändert das Verhalten des Hintergrunds auf mobilen Geräten */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; /* Stellt sicher, dass die Seite mindestens die volle Bildschirmhöhe hat */
     flex-direction: column;
     padding: 20px;
-    background-repeat: no-repeat;  /* Verhindert das wiederholte Anzeigen des Hintergrunds */
 }
 
 /* Container */
@@ -29,33 +27,17 @@ body {
     border: 3px solid black; /* Schwarze Umrandung */
 }
 
-/* Titel */
+/* Überschrift Style */
 .title {
     font-size: 2rem;
     color: #D3D3D3;
     text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);
-    -webkit-text-stroke: 1.5px black;
+    -webkit-text-stroke: 1.5px black; /* Schwarze Umrandung */
     text-stroke: 1.5px black;
     margin-bottom: 15px;
 }
 
-/* GIF für Social Media Titel */
-.gengar-gif {
-    width: 30px; /* Größe anpassen */
-    height: auto;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-/* GIF für Links Buttons */
-.button-gif {
-    width: 25px;  /* Größe für das GIF in den Links */
-    height: auto;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-/* Links für mobile Geräte */
+/* Links Style */
 .link {
     display: block;
     margin: 12px 0;
@@ -67,45 +49,71 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 1.4rem;
-    border: 2px solid black;
-    width: 80%;
+    font-size: 1.4rem; /* Größerer Text */
+    border: 2px solid black; /* Schwarze Umrandung */
+    width: 80%; /* Links größer machen, damit sie auf mobilen Geräten leichter zu klicken sind */
     margin-left: auto;
     margin-right: auto;
+    -webkit-text-stroke: 1px black; /* Schwarze Umrandung */
+    text-stroke: 1px black; /* Schwarze Umrandung */
+    text-shadow: none; /* Glühen entfernt */
 }
 
-/* Hover-Effekt für Links */
 .link:hover {
     background: linear-gradient(145deg, #32CD32, #000000);
     transform: scale(1.05);
 }
 
-/* Responsives Design für mobile Geräte */
+/* GIF Container */
+.gif-container {
+    margin: 20px 0; /* Abstand oben und unten */
+    text-align: center; /* Zentriert das GIF */
+}
+
+.gif-container img {
+    max-width: 100%; /* Verhindert, dass das GIF zu groß wird */
+    height: auto; /* Beibehaltung der Proportionen */
+    border-radius: 10px; /* Falls du die Ecken abgerundet haben möchtest */
+}
+
+/* Sektionen */
+.section {
+    margin-top: 25px;
+}
+
+/* Footer */
+.footer {
+    font-size: 1rem;
+    color: black; /* Schriftfarbe schwarz */
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    font-family: 'UnifrakturCook', cursive; /* Altdeutsche Schrift */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Grüner Glow */
+}
+
+/* Responsives Design */
 @media (max-width: 600px) {
-    /* Sicherstellen, dass das Hintergrundbild gut aussieht */
     body {
-        background-size: contain;  /* Verhindert das Abschneiden des Hintergrundbilds */
+        background-attachment: scroll; /* Hintergrund auf mobilen Geräten scrollen lassen */
     }
 
-    /* Container für kleine Bildschirme anpassen */
     .container {
         width: 95%;
         padding: 20px;
     }
-
-    /* Titel anpassen */
+    
     .title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
-    /* Links für mobile Geräte */
     .link {
-        font-size: 1.2rem;
-        padding: 20px;
+        font-size: 1.2rem; /* Größere Schriftgröße für Links */
+        padding: 15px; /* Größere Schaltflächen für mobile Geräte */
     }
 
-    /* Die GIF-Größe für mobile Geräte anpassen */
-    .gengar-gif, .button-gif {
-        width: 20px;
+    .gif-container img {
+        width: 90%; /* GIFs anpassen, um den mobilen Bildschirm besser auszufüllen */
     }
 }
