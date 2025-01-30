@@ -39,7 +39,7 @@ body {
     -webkit-text-stroke: 1.5px black; /* Schwarze Umrandung */
     text-stroke: 1.5px black;
     margin-bottom: 15px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap; /* Verhindert, dass die Bilder und der Text in mehreren Zeilen erscheinen */
