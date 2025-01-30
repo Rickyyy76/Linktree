@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Statt height 100vh, um bei Bedarf mehr Platz zu lassen */
+    min-height: 100vh;
     flex-direction: column;
     padding: 20px;
 }
@@ -21,11 +21,11 @@ body {
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 500px;
+    width: 100%; /* Flexibel für verschiedene Bildschirmgrößen */
+    max-width: 600px; /* Maximale Breite der Box */
     text-align: center;
     color: white;
-    border: 3px solid black; /* Schwarze Umrandung */
+    border: 3px solid black;
     display: flex;
     flex-direction: column;
     align-items: center; /* Zentrieren der Inhalte */
@@ -46,9 +46,9 @@ body {
 
 /* Bilder innerhalb der Überschrift */
 .title img {
-    width: 30px; /* Verkleinere die Größe der Bilder */
+    width: 25px; /* Verkleinere die Größe der Bilder */
     height: auto;
-    margin: 0 5px; /* Etwas Abstand zwischen den Bildern und dem Text */
+    margin: 0 10px; /* Etwas Abstand zwischen den Bildern und dem Text */
 }
 
 /* Links Style */
@@ -64,7 +64,7 @@ body {
     transition: all 0.3s ease;
     text-align: center;
     font-size: 1.4rem; /* Größerer Text */
-    border: 2px solid black; /* Schwarze Umrandung */
+    border: 2px solid black;
     width: 80%; /* Links größer machen, damit sie auf mobilen Geräten leichter zu klicken sind */
     margin-left: auto;
     margin-right: auto;
@@ -89,7 +89,7 @@ body {
 .gif-container img {
     max-width: 100%; /* Verhindert, dass das GIF zu groß wird */
     height: auto; /* Beibehaltung der Proportionen */
-    border-radius: 10px; /* Falls du die Ecken abgerundet haben möchtest */
+    border-radius: 10px;
 }
 
 /* Sektionen */
@@ -99,9 +99,9 @@ body {
 
 /* Bilder innerhalb der Crypto/Trading Überschrift */
 .section h2 img {
-    width: 30px; /* Verkleinere die Größe der Bilder */
+    width: 25px; /* Verkleinere die Größe der Bilder */
     height: auto;
-    margin: 0 5px; /* Abstand zwischen den Bildern und dem Text */
+    margin: 0 5px;
 }
 
 /* Footer */
@@ -109,7 +109,7 @@ body {
 
 .footer {
     font-size: 1rem;
-    color: black; /* Schriftfarbe schwarz */
+    color: black;
     position: relative;
     margin-top: 20px;
     text-align: center;
@@ -125,27 +125,31 @@ body {
     }
 
     .container {
-        width: 95%;
+        width: 100%;
         padding: 15px;
     }
-    
+
     .title {
         font-size: 1.8rem;
+        flex-direction: column; /* Stacken von Text und Bildern auf mobilen Geräten */
     }
 
+    /* Links auf mobilen Geräten anpassen */
     .link {
         font-size: 1.2rem; /* Größere Schriftgröße für Links */
-        padding: 15px; /* Größere Schaltflächen für mobile Geräte */
+        padding: 12px; /* Größere Schaltflächen für mobile Geräte */
         width: 90%; /* Links breiter auf mobilen Geräten */
     }
 
     /* Mobile Anpassungen für die Überschrift */
     .title img {
-        width: 25px; /* Kleinere Bilder auf mobilen Geräten */
+        width: 20px; /* Kleinere Bilder auf mobilen Geräten */
+        margin: 0 5px;
     }
 
-    /* Mobile Anpassungen für die Crypto/Trading Überschrift */
+    /* Anpassungen für Crypto/Trading */
     .section h2 img {
-        width: 25px; /* Kleinere Bilder auf mobilen Geräten */
+        width: 20px; /* Kleinere Bilder auf mobilen Geräten */
+        margin: 0 5px;
     }
 }
