@@ -42,13 +42,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap; /* Verhindert, dass die Bilder und der Text in mehreren Zeilen erscheinen */
 }
 
 /* Bilder innerhalb der Überschrift */
 .title img {
-    width: 25px; /* Verkleinere die Größe der Bilder */
-    height: auto;
-    margin: 0 10px; /* Etwas Abstand zwischen den Bildern und dem Text */
+    width: 20px; /* Bildgröße auf feste Breite setzen */
+    height: 20px; /* Bildhöhe auf feste Höhe setzen */
+    margin: 0 5px; /* Etwas Abstand zwischen den Bildern und dem Text */
 }
 
 /* Links Style */
@@ -83,11 +84,13 @@ body {
 .gif-container {
     margin: 20px 0; /* Abstand oben und unten */
     text-align: center; /* Zentriert das GIF */
+    width: 100%; /* Container auf 100% der Boxgröße setzen */
+    max-width: 600px; /* Maximalgröße auf 600px setzen */
 }
 
 /* GIF Bilder */
 .gif-container img {
-    max-width: 100%; /* Verhindert, dass das GIF zu groß wird */
+    max-width: 100%; /* Verhindert, dass das GIF die Breite überschreitet */
     height: auto; /* Beibehaltung der Proportionen */
     border-radius: 10px;
 }
@@ -99,8 +102,8 @@ body {
 
 /* Bilder innerhalb der Crypto/Trading Überschrift */
 .section h2 img {
-    width: 25px; /* Verkleinere die Größe der Bilder */
-    height: auto;
+    width: 20px; /* Verkleinere die Größe der Bilder */
+    height: 20px; /* Bildhöhe auf feste Höhe setzen */
     margin: 0 5px;
 }
 
@@ -144,12 +147,14 @@ body {
     /* Mobile Anpassungen für die Überschrift */
     .title img {
         width: 20px; /* Kleinere Bilder auf mobilen Geräten */
+        height: 20px; /* Bildhöhe auf feste Höhe setzen */
         margin: 0 5px;
     }
 
     /* Anpassungen für Crypto/Trading */
     .section h2 img {
         width: 20px; /* Kleinere Bilder auf mobilen Geräten */
+        height: 20px; /* Bildhöhe auf feste Höhe setzen */
         margin: 0 5px;
     }
 }
