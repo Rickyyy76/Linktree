@@ -49,16 +49,39 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Größerer Text */
     border: 2px solid black; /* Schwarze Umrandung */
     width: 80%; /* Links größer machen, damit sie auf mobilen Geräten leichter zu klicken sind */
     margin-left: auto;
     margin-right: auto;
+    -webkit-text-stroke: 1px black; /* Schwarze Umrandung */
+    text-stroke: 1px black; /* Schwarze Umrandung */
+    text-shadow: none; /* Glühen entfernt */
 }
 
 .link:hover {
     background: linear-gradient(145deg, #32CD32, #000000);
     transform: scale(1.05);
+}
+
+/* Instagram GIF Style */
+.link img {
+    width: 30px;  /* Größe des GIFs */
+    height: auto;  /* Beibehaltung der Proportionen */
+    vertical-align: middle;  /* Vertikale Ausrichtung */
+    margin-right: 10px;  /* Abstand zum Text */
+}
+
+/* GIF Container */
+.gif-container {
+    margin: 20px 0; /* Abstand oben und unten */
+    text-align: center; /* Zentriert das GIF */
+}
+
+.gif-container img {
+    max-width: 100%; /* Verhindert, dass das GIF zu groß wird */
+    height: auto; /* Beibehaltung der Proportionen */
+    border-radius: 10px; /* Falls du die Ecken abgerundet haben möchtest */
 }
 
 /* Sektionen */
