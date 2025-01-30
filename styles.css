@@ -1,15 +1,16 @@
+/* Body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-image: url('background-image.jpg');
-    background-size: cover; /* Stellt sicher, dass das Bild immer den gesamten Bildschirm abdeckt */
+    background-size: cover;
     background-position: center;
-    background-attachment: scroll; /* Ändert das Verhalten des Hintergrunds auf mobilen Geräten */
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Stellt sicher, dass die Seite mindestens die volle Bildschirmhöhe hat */
+    min-height: 100vh; /* Statt height 100vh, um bei Bedarf mehr Platz zu lassen */
     flex-direction: column;
     padding: 20px;
 }
@@ -35,6 +36,16 @@ body {
     -webkit-text-stroke: 1.5px black; /* Schwarze Umrandung */
     text-stroke: 1.5px black;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bilder innerhalb der Überschrift */
+.title img {
+    width: 30px; /* Verkleinere die Größe der Bilder */
+    height: auto;
+    margin: 0 5px; /* Etwas Abstand zwischen den Bildern und dem Text */
 }
 
 /* Links Style */
@@ -59,6 +70,7 @@ body {
     text-shadow: none; /* Glühen entfernt */
 }
 
+/* Links Hover-Effekt */
 .link:hover {
     background: linear-gradient(145deg, #32CD32, #000000);
     transform: scale(1.05);
@@ -70,6 +82,7 @@ body {
     text-align: center; /* Zentriert das GIF */
 }
 
+/* GIF Bilder */
 .gif-container img {
     max-width: 100%; /* Verhindert, dass das GIF zu groß wird */
     height: auto; /* Beibehaltung der Proportionen */
@@ -81,7 +94,16 @@ body {
     margin-top: 25px;
 }
 
+/* Bilder innerhalb der Crypto/Trading Überschrift */
+.section h2 img {
+    width: 30px; /* Verkleinere die Größe der Bilder */
+    height: auto;
+    margin: 0 5px; /* Abstand zwischen den Bildern und dem Text */
+}
+
 /* Footer */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
 .footer {
     font-size: 1rem;
     color: black; /* Schriftfarbe schwarz */
@@ -96,12 +118,12 @@ body {
 /* Responsives Design */
 @media (max-width: 600px) {
     body {
-        background-attachment: scroll; /* Hintergrund auf mobilen Geräten scrollen lassen */
+        padding: 10px; /* Weniger Abstand */
     }
 
     .container {
         width: 95%;
-        padding: 20px;
+        padding: 15px;
     }
     
     .title {
@@ -113,7 +135,13 @@ body {
         padding: 15px; /* Größere Schaltflächen für mobile Geräte */
     }
 
-    .gif-container img {
-        width: 90%; /* GIFs anpassen, um den mobilen Bildschirm besser auszufüllen */
+    /* Mobile Anpassungen für die Überschrift */
+    .title img {
+        width: 25px; /* Kleinere Bilder auf mobilen Geräten */
+    }
+
+    /* Mobile Anpassungen für die Crypto/Trading Überschrift */
+    .section h2 img {
+        width: 25px; /* Kleinere Bilder auf mobilen Geräten */
     }
 }
