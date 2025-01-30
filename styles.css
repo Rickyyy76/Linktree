@@ -1,4 +1,4 @@
- body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,14 +9,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Statt height 100vh, um bei Bedarf mehr Platz zu lassen */
+    min-height: 100vh;
     flex-direction: column;
     padding: 20px;
 }
 
 /* Container */
 .container {
-    background: rgba(0, 0, 0, 0.6); /* Weniger Transparenz für besseren Hintergrundsicht */
+    background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -24,7 +24,7 @@
     max-width: 500px;
     text-align: center;
     color: white;
-    border: 3px solid black; /* Schwarze Umrandung */
+    border: 3px solid black;
 }
 
 /* Überschrift Style */
@@ -32,9 +32,26 @@
     font-size: 2rem;
     color: #D3D3D3;
     text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);
-    -webkit-text-stroke: 1.5px black; /* Schwarze Umrandung */
+    -webkit-text-stroke: 1.5px black;
     text-stroke: 1.5px black;
     margin-bottom: 15px;
+    position: relative; /* Ermöglicht die Positionierung der GIFs */
+}
+
+/* GIF Container */
+.gif-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: -1; /* Sicherstellen, dass die GIFs hinter der Überschrift bleiben */
+}
+
+.gif-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Links Style */
@@ -49,14 +66,14 @@
     font-weight: bold;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 1.4rem; /* Größerer Text */
-    border: 2px solid black; /* Schwarze Umrandung */
-    width: 80%; /* Links größer machen, damit sie auf mobilen Geräten leichter zu klicken sind */
+    font-size: 1.4rem;
+    border: 2px solid black;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    -webkit-text-stroke: 1px black; /* Schwarze Umrandung */
-    text-stroke: 1px black; /* Schwarze Umrandung */
-    text-shadow: none; /* Glühen entfernt */
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+    text-shadow: none;
 }
 
 .link:hover {
@@ -66,22 +83,10 @@
 
 /* Instagram GIF Style */
 .link img {
-    width: 30px;  /* Größe des GIFs */
-    height: auto;  /* Beibehaltung der Proportionen */
-    vertical-align: middle;  /* Vertikale Ausrichtung */
-    margin-right: 10px;  /* Abstand zum Text */
-}
-
-/* GIF Container */
-.gif-container {
-    margin: 20px 0; /* Abstand oben und unten */
-    text-align: center; /* Zentriert das GIF */
-}
-
-.gif-container img {
-    max-width: 100%; /* Verhindert, dass das GIF zu groß wird */
-    height: auto; /* Beibehaltung der Proportionen */
-    border-radius: 10px; /* Falls du die Ecken abgerundet haben möchtest */
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 /* Sektionen */
@@ -94,13 +99,13 @@
 
 .footer {
     font-size: 1rem;
-    color: black; /* Schriftfarbe schwarz */
+    color: black;
     position: relative;
     margin-top: 20px;
     text-align: center;
     width: 100%;
-    font-family: 'UnifrakturCook', cursive; /* Altdeutsche Schrift */
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Grüner Glow */
+    font-family: 'UnifrakturCook', cursive;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
 }
 
 /* Responsives Design */
@@ -109,13 +114,43 @@
         width: 95%;
         padding: 20px;
     }
-    
+
     .title {
         font-size: 1.8rem;
     }
 
     .link {
-        font-size: 1.2rem; /* Größere Schriftgröße für Links */
-        padding: 15px; /* Größere Schaltflächen für mobile Geräte */
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    /* Links und Überschrift besser skalieren */
+    .section .link {
+        font-size: 1.3rem;
+        padding: 20px;
+    }
+
+    /* Überschrift für mobile Geräte anpassen */
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    /* Schriftgröße der Links anpassen */
+    .link {
+        font-size: 1.1rem;
+    }
+
+    /* Bilder innerhalb der Links dürfen auch kleiner sein */
+    .link img {
+        width: 24px;
+        height: auto;
+    }
+
+    /* Anpassung der GIF-Container */
+    .gif-container img {
+        width: 80%;  /* Skalieren der GIFs auf mobile Geräte */
+        height: auto;
     }
 }
+
