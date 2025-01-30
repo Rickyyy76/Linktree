@@ -35,23 +35,9 @@ body {
     -webkit-text-stroke: 1.5px black;
     text-stroke: 1.5px black;
     margin-bottom: 15px;
-    position: relative; /* Ermöglicht die Positionierung der GIFs */
-}
-
-/* GIF Container */
-.gif-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: -1; /* Sicherstellen, dass die GIFs hinter der Überschrift bleiben */
-}
-
-.gif-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    position: relative;
+    padding-left: 40px;  /* Platz für das Bild auf der linken Seite */
+    padding-right: 40px;  /* Platz für das Bild auf der rechten Seite */
 }
 
 /* Links Style */
@@ -89,6 +75,41 @@ body {
     margin-right: 10px;
 }
 
+/* GIF Container */
+.gif-container {
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Crypto/Trading-GIFs */
+.gif-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Background Image for Title */
+.title::before {
+    content: url('left-image.gif');  /* Bild auf der linken Seite */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;  /* Größe des Bildes */
+    height: auto;
+}
+
+.title::after {
+    content: url('right-image.gif');  /* Bild auf der rechten Seite */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;  /* Größe des Bildes */
+    height: auto;
+}
+
 /* Sektionen */
 .section {
     margin-top: 25px;
@@ -124,33 +145,8 @@ body {
         padding: 15px;
     }
 
-    /* Links und Überschrift besser skalieren */
-    .section .link {
-        font-size: 1.3rem;
-        padding: 20px;
-    }
-
-    /* Überschrift für mobile Geräte anpassen */
-    .title {
-        font-size: 1.6rem;
-        margin-bottom: 10px;
-    }
-
-    /* Schriftgröße der Links anpassen */
-    .link {
-        font-size: 1.1rem;
-    }
-
-    /* Bilder innerhalb der Links dürfen auch kleiner sein */
-    .link img {
-        width: 24px;
-        height: auto;
-    }
-
-    /* Anpassung der GIF-Container */
     .gif-container img {
-        width: 80%;  /* Skalieren der GIFs auf mobile Geräte */
+        width: 80%;
         height: auto;
     }
 }
-
