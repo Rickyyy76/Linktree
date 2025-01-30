@@ -52,8 +52,16 @@ body {
     width: 25px; /* Bildgröße */
     height: 25px; /* Bildhöhe */
     top: 0;
-    left: 0;
     z-index: 1; /* Bilder über dem Text */
+}
+
+/* Zwei Bilder nebeneinander */
+.title img:first-child {
+    left: -35px; /* Verschiebung des ersten Bildes nach links */
+}
+
+.title img:last-child {
+    right: -35px; /* Verschiebung des zweiten Bildes nach rechts */
 }
 
 /* Links Style */
@@ -75,6 +83,7 @@ body {
     margin-right: auto;
     -webkit-text-stroke: 1px black; /* Schwarze Umrandung */
     text-stroke: 1px black;
+    position: relative; /* Position für GIFs innerhalb der Buttons */
 }
 
 /* Links Hover-Effekt */
@@ -98,6 +107,17 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+/* Buttons innerhalb der Links */
+.link img {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: -35px; /* Platzierung für das GIF innerhalb des Buttons */
+    transform: translateY(-50%);
+    z-index: 1; /* Stellen sicher, dass das GIF über dem Button-Text bleibt */
 }
 
 /* Sektionen */
