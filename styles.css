@@ -27,7 +27,7 @@ body {
     border: 3px solid black;
 }
 
-/* Überschrift Style */
+/* Titel-Stil */
 .title {
     font-size: 2rem;
     color: #D3D3D3;
@@ -35,12 +35,19 @@ body {
     -webkit-text-stroke: 1.5px black;
     text-stroke: 1.5px black;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    padding-left: 40px;  /* Platz für das Bild auf der linken Seite */
-    padding-right: 40px;  /* Platz für das Bild auf der rechten Seite */
 }
 
-/* Links Style */
+/* Gengar-Container für Bilder in der Überschrift */
+.gengar-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Links-Stil */
 .link {
     display: block;
     margin: 12px 0;
@@ -67,19 +74,10 @@ body {
     transform: scale(1.05);
 }
 
-/* Instagram GIF Style */
-.link img {
-    width: 30px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
 /* GIF Container */
 .gif-container {
     margin: 20px 0;
     text-align: center;
-    position: relative;
 }
 
 /* Crypto/Trading-GIFs */
@@ -89,35 +87,12 @@ body {
     border-radius: 10px;
 }
 
-/* Background Image for Title */
-.title::before {
-    content: url('left-image.gif');  /* Bild auf der linken Seite */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;  /* Größe des Bildes */
-    height: auto;
-}
-
-.title::after {
-    content: url('right-image.gif');  /* Bild auf der rechten Seite */
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;  /* Größe des Bildes */
-    height: auto;
-}
-
 /* Sektionen */
 .section {
     margin-top: 25px;
 }
 
 /* Footer */
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
-
 .footer {
     font-size: 1rem;
     color: black;
@@ -125,8 +100,6 @@ body {
     margin-top: 20px;
     text-align: center;
     width: 100%;
-    font-family: 'UnifrakturCook', cursive;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
 }
 
 /* Responsives Design */
@@ -143,10 +116,5 @@ body {
     .link {
         font-size: 1.2rem;
         padding: 15px;
-    }
-
-    .gif-container img {
-        width: 80%;
-        height: auto;
     }
 }
