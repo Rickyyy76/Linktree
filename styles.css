@@ -26,6 +26,9 @@ body {
     text-align: center;
     color: white;
     border: 3px solid black; /* Schwarze Umrandung */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentrieren der Inhalte */
 }
 
 /* Überschrift Style */
@@ -133,6 +136,7 @@ body {
     .link {
         font-size: 1.2rem; /* Größere Schriftgröße für Links */
         padding: 15px; /* Größere Schaltflächen für mobile Geräte */
+        width: 90%; /* Links breiter auf mobilen Geräten */
     }
 
     /* Mobile Anpassungen für die Überschrift */
