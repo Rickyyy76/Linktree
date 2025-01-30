@@ -35,16 +35,10 @@ body {
     -webkit-text-stroke: 1.5px black; /* Schwarze Umrandung */
     text-stroke: 1.5px black;
     margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Abstand zwischen Elementen */
 }
-
-/* Grüner Glow für Palmen-Emoji */
-.glowing-emoji {
-    font-size: 2.2rem;
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+/* Grüner Glow für Palmen-Emojis */
+.green-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
 }
 
 /* Links Style */
@@ -122,7 +116,6 @@ body {
     
     .title {
         font-size: 1.8rem;
-        flex-direction: column; /* Damit Emojis und Text bei sehr kleinen Bildschirmen nicht überlappen */
     }
 
     .link {
