@@ -9,14 +9,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Statt height 100vh, um bei Bedarf mehr Platz zu lassen */
+    min-height: 100vh;
     flex-direction: column;
     padding: 20px;
 }
 
 /* Container */
 .container {
-    background: rgba(0, 0, 0, 0.6); /* Weniger Transparenz für besseren Hintergrundsicht */
+    background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -24,7 +24,7 @@ body {
     max-width: 500px;
     text-align: center;
     color: white;
-    border: 3px solid black; /* Schwarze Umrandung */
+    border: 3px solid black;
 }
 
 /* Überschrift Style */
@@ -32,10 +32,16 @@ body {
     font-size: 2rem;
     color: #D3D3D3;
     text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);
-    -webkit-text-stroke: 1.5px black; /* Schwarze Umrandung */
+    -webkit-text-stroke: 1.5px black;
     text-stroke: 1.5px black;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
+
 /* Grüner Glow für Palmen-Emojis */
 .green-glow {
     text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
@@ -53,14 +59,14 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 1.4rem; /* Größerer Text */
-    border: 2px solid black; /* Schwarze Umrandung */
-    width: 80%; /* Links größer machen, damit sie auf mobilen Geräten leichter zu klicken sind */
+    font-size: 1.4rem;
+    border: 2px solid black;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    -webkit-text-stroke: 1px black; /* Schwarze Umrandung */
-    text-stroke: 1px black; /* Schwarze Umrandung */
-    text-shadow: none; /* Glühen entfernt */
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+    text-shadow: none;
 }
 
 .link:hover {
@@ -70,22 +76,22 @@ body {
 
 /* Instagram GIF Style */
 .link img {
-    width: 30px;  /* Größe des GIFs */
-    height: auto;  /* Beibehaltung der Proportionen */
-    vertical-align: middle;  /* Vertikale Ausrichtung */
-    margin-right: 10px;  /* Abstand zum Text */
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 /* GIF Container */
 .gif-container {
-    margin: 20px 0; /* Abstand oben und unten */
-    text-align: center; /* Zentriert das GIF */
+    margin: 20px 0;
+    text-align: center;
 }
 
 .gif-container img {
-    max-width: 100%; /* Verhindert, dass das GIF zu groß wird */
-    height: auto; /* Beibehaltung der Proportionen */
-    border-radius: 10px; /* Falls du die Ecken abgerundet haben möchtest */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Sektionen */
@@ -98,13 +104,19 @@ body {
 
 .footer {
     font-size: 1rem;
-    color: black; /* Schriftfarbe schwarz */
+    color: black;
     position: relative;
     margin-top: 20px;
     text-align: center;
     width: 100%;
-    font-family: 'UnifrakturCook', cursive; /* Altdeutsche Schrift */
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Grüner Glow */
+    font-family: 'UnifrakturCook', cursive;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* Bilder in der Überschrift richtig ausrichten */
+.gengar-gif {
+    height: 40px;
+    width: auto;
 }
 
 /* Responsives Design */
@@ -116,10 +128,15 @@ body {
     
     .title {
         font-size: 1.8rem;
+        flex-wrap: nowrap;
     }
 
     .link {
-        font-size: 1.2rem; /* Größere Schriftgröße für Links */
-        padding: 15px; /* Größere Schaltflächen für mobile Geräte */
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .gengar-gif {
+        height: 30px;
     }
 }
