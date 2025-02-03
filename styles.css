@@ -102,7 +102,7 @@ body {
 /* Preisliste Style */
 .table-container {
     margin-top: 30px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: transparent; /* Hintergrundfarbe entfernt */
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
@@ -114,6 +114,7 @@ body {
     border-collapse: collapse;
     color: white;
     font-size: 1.2rem;
+    table-layout: fixed; /* Fixierte Tabellenstruktur für mobile Ansicht */
 }
 
 .table-container th, .table-container td {
@@ -194,3 +195,4 @@ body {
         padding: 8px;
     }
 }
+
