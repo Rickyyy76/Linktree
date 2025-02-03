@@ -27,7 +27,7 @@ body {
     border: 3px solid black;
 }
 
-/* Überschrift Style */
+/* Title */
 .title {
     font-size: 2rem;
     color: #D3D3D3;
@@ -42,17 +42,12 @@ body {
     flex-wrap: wrap;
 }
 
-/* Grüner Glow für Palmen-Emojis */
-.green-glow {
-    text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
-}
-
-/* Links Style */
+/* Glow-Effekt für Links bei Hover */
 .link {
     display: block;
     margin: 12px 0;
     padding: 15px;
-    background: linear-gradient(145deg, #000000, #32CD32);
+    background: linear-gradient(145deg, #000000c9, #32cd32c0);
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -69,9 +64,12 @@ body {
     text-shadow: none;
 }
 
+/* Glow-Effekt für den gesamten Button bei Hover */
 .link:hover {
-    background: linear-gradient(145deg, #32CD32, #000000);
+    background: linear-gradient(145deg, #32cd32ad, #000000b2);
     transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
+    text-shadow: 0 0 15px rgba(0, 255, 0, 1);
 }
 
 /* Instagram GIF Style */
@@ -94,45 +92,41 @@ body {
     border-radius: 10px;
 }
 
-/* Sektionen */
-.section {
-    margin-top: 25px;
-}
-
-/* Preisliste Style */
+/* Preislistentabelle */
 .table-container {
     margin-top: 30px;
-    background-color: transparent; /* Kein Hintergrund um die Tabelle */
+    background-color: transparent;
     border-radius: 15px;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Stil der Preistabelle */
+/* Tabellenüberschrift und Zellen */
 .table-container th, .table-container td {
     padding: 15px;
     border: 2px solid #32CD32;
     text-align: left;
 }
 
-/* Transparente Hintergrundfarben für die drei Zellen */
+/* Transparente Hintergrundfarben für den Tabellen-Header */
 .table-container th {
-    background-color: rgba(50, 205, 50, 0.6); /* Leicht transparente grüne Farbe für den Header */
+    background-color: rgba(50, 205, 50, 0.6);
     font-weight: bold;
     color: black;
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
 }
 
+/* Transparenter Hintergrund für Zellen */
 .table-container td {
-    background-color: rgba(0, 0, 0, 0.4); /* Transparenter Hintergrund für die Zellen */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .table-container tr:nth-child(even) td {
-    background-color: rgba(0, 0, 0, 0.35); /* Noch mehr Transparenz für gerade Zeilen */
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
-/* Table Hover Effects */
+/* Hover-Effekt für Tabellenzeilen */
 .table-container tr:hover {
     background-color: rgba(0, 255, 0, 0.1);
     transform: scale(1.02);
@@ -151,12 +145,6 @@ body {
     width: 100%;
     font-family: 'UnifrakturCook', cursive;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
-}
-
-/* Bilder in der Überschrift richtig ausrichten */
-.gengar-gif {
-    height: 40px;
-    width: auto;
 }
 
 /* Responsives Design */
