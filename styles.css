@@ -19,7 +19,7 @@ body {
     background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.267);
     width: 90%;
     max-width: 500px;
     text-align: center;
@@ -110,34 +110,26 @@ body {
 }
 
 /* Stil der Preistabelle */
-.table-container table {
-    width: 100%;
-    border-collapse: collapse;
-    color: white;
-    font-size: 1.2rem;
-    border: 2px solid #32CD32;
-}
-
 .table-container th, .table-container td {
     padding: 15px;
     border: 2px solid #32CD32;
     text-align: left;
-    background-color: rgba(0, 0, 0, 0.6); /* Transparenter Hintergrund für die Zellen */
 }
 
+/* Transparente Hintergrundfarben für die drei Zellen */
 .table-container th {
-    background-color: rgba(50, 205, 50, 0.8); /* Leicht transparente grüne Farbe für den Header */
+    background-color: rgba(50, 205, 50, 0.6); /* Leicht transparente grüne Farbe für den Header */
     font-weight: bold;
     color: black;
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
 }
 
 .table-container td {
-    background-color: rgba(0, 0, 0, 0.6); /* Transparenter Hintergrund für die Zellen */
+    background-color: rgba(0, 0, 0, 0.4); /* Transparenter Hintergrund für die Zellen */
 }
 
-.table-container tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.5); /* Noch mehr Transparenz für gerade Zeilen */
+.table-container tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.35); /* Noch mehr Transparenz für gerade Zeilen */
 }
 
 /* Table Hover Effects */
