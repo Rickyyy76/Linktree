@@ -1,4 +1,4 @@
-body {
+body { 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -99,6 +99,52 @@ body {
     margin-top: 25px;
 }
 
+/* Preisliste Style */
+.table-container {
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Stil der Preistabelle */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.table-container th, .table-container td {
+    padding: 15px;
+    border: 2px solid #32CD32;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.table-container th {
+    background-color: #32CD32;
+    font-weight: bold;
+    color: black;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+.table-container td {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.table-container tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Table Hover Effects */
+.table-container tr:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
+}
+
 /* Footer */
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 
@@ -138,5 +184,13 @@ body {
 
     .gengar-gif {
         height: 30px;
+    }
+
+    .table-container table {
+        font-size: 1rem;
+    }
+
+    .table-container th, .table-container td {
+        padding: 8px;
     }
 }
