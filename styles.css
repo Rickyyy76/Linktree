@@ -102,10 +102,12 @@ body {
 /* Preisliste Style */
 .table-container {
     margin-top: 30px;
-    background-color: transparent; /* Hintergrundfarbe entfernt */
+    background-color: rgba(0, 0, 0, 0.4); /* Transparenter Hintergrund für die gesamte Tabelle */
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Stil der Preistabelle */
@@ -122,21 +124,22 @@ body {
     border: 2px solid #32CD32;
     text-align: left;
     transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparenter Hintergrund für die Zellen */
 }
 
 .table-container th {
-    background-color: #32CD32;
+    background-color: rgba(50, 205, 50, 0.8); /* Leicht transparente grüne Farbe für den Header */
     font-weight: bold;
     color: black;
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
 }
 
 .table-container td {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6); /* Transparenter Hintergrund für die Zellen */
 }
 
 .table-container tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5); /* Noch mehr Transparenz für gerade Zeilen */
 }
 
 /* Table Hover Effects */
@@ -195,4 +198,3 @@ body {
         padding: 8px;
     }
 }
-
