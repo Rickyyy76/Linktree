@@ -176,3 +176,32 @@ body {
         padding: 8px;
     }
 }
+#affiliate-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    width: 100%; /* Volle Breite des Containers */
+    max-width: 350px; /* Maximale Breite der Box */
+    margin: 0 auto; /* Zentriert die Box horizontal */
+    padding: 10px 0; /* Fügt oben und unten etwas Abstand hinzu */
+}
+
+.widget-product {
+    width: 120px; /* Größe der einzelnen Widgets */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px; /* Abstand zwischen den Widgets */
+}
+
+.product-image img {
+    width: 100px; /* Größe der Produktbilder */
+    height: auto;
+}
+
+.product-name,
+.product-price {
+    margin-top: 5px;
+}
