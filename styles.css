@@ -103,6 +103,9 @@ body {
     display: flex;
     justify-content: center; /* Zentriert die Tabelle horizontal */
     align-items: center; /* Zentriert die Tabelle vertikal */
+    margin-left: auto; /* Zentriert den Container nach links */
+    margin-right: auto; /* Zentriert den Container nach rechts */
+    max-width: 800px; /* Maximale Breite der Tabelle */
 }
 
 /* Tabellenüberschrift und Zellen */
@@ -156,6 +159,7 @@ body {
         padding: 10px; /* Weniger Padding */
     }
 }
+
 
 
 .footer {
