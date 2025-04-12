@@ -176,6 +176,8 @@ body {
         padding: 8px;
     }
 }
+
+/* Widget Container */
 #affiliate-widget {
     display: flex;
     justify-content: center;
@@ -185,8 +187,21 @@ body {
     max-width: 350px; 
     margin: 0 auto; 
     padding: 10px 0;
+    height: 350px; 
+    overflow-y: scroll; 
+    border: 1px solid #32CD32; 
+    border-radius: 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
 }
 
+#affiliate-widget::-webkit-scrollbar {
+    width: 0px; 
+    height: 0px; 
+}
+
+/* Widget Product */
 .widget-product {
     width: 120px; 
     display: flex;
@@ -205,27 +220,6 @@ body {
 .product-price {
     margin-top: 5px;
 }
-#affiliate-widget {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;  
-    width: 100%; 
-    max-width: 350px; 
-    margin: 0 auto; 
-    padding: 10px 0; 
-}
-
-#affiliate-widget::-webkit-scrollbar {
-    width: 0px; 
-    height: 0px; 
-}
-
-
-#affiliate-widget {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-}
 
 /* Glow-Effekt für die Widget-Überschrift */
 .widget-title {
@@ -241,36 +235,3 @@ body {
     display: block;
 }
 
-/* Container für das Widget */
-#affiliate-widget {
-    width: 100%; /* Vollständige Breite des Containers */
-    max-width: 350px; /* Maximale Breite des Containers */
-    height: auto; /* Automatische Höhe */
-    overflow-y: scroll; /* Vertikales Scrollen für den Inhalt */
-    padding: 10px;
-    border: 1px solid #32CD32;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 0 auto; /* Zentrierung */
-}
-
-/* Falls die Scrollleiste unsichtbar sein soll */
-#affiliate-widget::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-}
-
-#affiliate-widget {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    #affiliate-widget {
-        width: 100%; /* Vollständige Breite auf kleinen Geräten */
-        max-width: 100%; /* Maximale Breite auch 100% */
-        height: auto; /* Automatische Höhe */
-        padding: 10px;
-    }
-}
