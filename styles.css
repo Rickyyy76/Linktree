@@ -180,11 +180,11 @@ body {
 /* Widget Container */
 #affiliate-widget {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
     overflow: auto;
     width: 100%; 
-    max-width: 350px; 
+    max-width: 350px; /* Maximale Breite */
     margin: 0 auto; 
     padding: 10px 0;
     height: 350px; 
@@ -196,10 +196,12 @@ body {
     scrollbar-width: none;
 }
 
+/* Entfernt den Scrollbar */
 #affiliate-widget::-webkit-scrollbar {
     width: 0px; 
     height: 0px; 
 }
+
 
 /* Widget Product */
 .widget-product {
