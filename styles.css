@@ -1,274 +1,272 @@
+body { 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 20px;
+}
 
- body { 
-     font-family: Arial, sans-serif;
-     margin: 0;
-     padding: 0;
-     background-image: url('background-image.jpg');
-     background-size: cover;
-     background-position: center;
-     background-attachment: fixed;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     min-height: 100vh;
-     flex-direction: column;
-     padding: 20px;
- }
- 
- /* Container */
- .container {
-     background: rgba(0, 0, 0, 0.6);
-     padding: 30px;
-     border-radius: 20px;
-     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.267);
-     width: 90%;
-     max-width: 500px;
-     text-align: center;
-     color: white;
-     border: 3px solid black;
- }
- 
- /* Title */
- .title {
-     font-size: 2rem;
-     color: #D3D3D3;
-     text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);
-     -webkit-text-stroke: 1.5px black;
-     text-stroke: 1.5px black;
-     margin-bottom: 15px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 10px;
-     flex-wrap: wrap;
- }
- 
- /* Glow-Effekt für Links bei Hover */
- .link {
-     display: block;
-     margin: 12px 0;
-     padding: 15px;
-     background: linear-gradient(145deg, #000000c9, #32cd32c0);
-     color: white;
-     text-decoration: none;
-     border-radius: 30px;
-     font-weight: bold;
-     transition: all 0.3s ease;
-     text-align: center;
-     font-size: 1.4rem;
-     border: 2px solid black;
-     width: 80%;
-     margin-left: auto;
-     margin-right: auto;
-     -webkit-text-stroke: 1px black;
-     text-stroke: 1px black;
-     text-shadow: none;
- }
- 
- /* Glow-Effekt für den gesamten Button bei Hover */
- .link:hover {
-     background: linear-gradient(145deg, #32cd32ad, #000000b2);
-     transform: scale(1.05);
-     box-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
-     text-shadow: 0 0 15px rgba(0, 255, 0, 1);
- }
- 
- /* Instagram GIF Style */
- .link img {
-     width: 30px;
-     height: auto;
-     vertical-align: middle;
-     margin-right: 10px;
- }
- 
- /* GIF Container */
- .gif-container {
-     margin: 20px 0;
-     text-align: center;
- }
- 
- .gif-container img {
-     max-width: 100%;
-     height: auto;
-     border-radius: 10px;
- }
- 
- /* Preislistentabelle */
- .table-container {
-     margin-top: 30px;
-     background-color: transparent;
-     border-radius: 15px;
-     padding: 20px;
-     width: 100%;
-     box-sizing: border-box;
-     display: flex;
-     justify-content: center; /* Zentriert die Tabelle horizontal */
-     align-items: center; /* Zentriert die Tabelle vertikal */
-     margin-left: auto; /* Zentriert den Container nach links */
-     margin-right: auto; /* Zentriert den Container nach rechts */
-     max-width: 800px; /* Maximale Breite der Tabelle */
- }
- 
- /* Tabellenüberschrift und Zellen */
- .table-container th, .table-container td {
-     padding: 15px;
-     border: 2px solid #32CD32;
-     text-align: left;
- }
- 
- /* Transparente Hintergrundfarben für den Tabellen-Header */
- .table-container th {
-     background-color: rgba(50, 205, 50, 0.6);
-     font-weight: bold;
-     color: black;
-     text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
- }
- 
- /* Transparenter Hintergrund für Zellen */
- .table-container td {
-     background-color: rgba(0, 0, 0, 0.4);
- }
- 
- .table-container tr:nth-child(even) td {
-     background-color: rgba(0, 0, 0, 0.35);
- }
- 
- /* Hover-Effekt für Tabellenzeilen */
- .table-container tr:hover {
-     background-color: rgba(0, 255, 0, 0.1);
-     transform: scale(1.02);
-     box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
- }
- 
- /* Anpassungen für mobile Geräte */
- @media (max-width: 600px) {
-     .table-container {
-         padding: 15px;
-         width: 90%; /* Reduziert die Breite */
-         margin: 0 auto; /* Zentriert den Container */
-         display: flex;
-         justify-content: center; /* Zentriert den Inhalt */
-         align-items: center; /* Vertikale Zentrierung */
-     }
- 
-     .table-container table {
-         font-size: 0.9rem; /* Kleinere Schriftgröße */
-         width: 100%; /* Tabellenbreite auf 100% */
-     }
- 
-     .table-container th, .table-container td {
-         padding: 10px; /* Weniger Padding */
-     }
- }
- 
- 
- 
- .footer {
-     font-size: 1rem;
-     color: black;
-     position: relative;
-     margin-top: 20px;
-     text-align: center;
-     width: 100%;
-     font-family: 'UnifrakturCook', cursive;
-     text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
- }
- 
- /* Responsives Design */
- @media (max-width: 600px) {
-     .container {
-         width: 95%;
-         padding: 20px;
-     }
- 
-     .title {
-         font-size: 1.8rem;
-         flex-wrap: nowrap;
-     }
- 
-     .link {
-         font-size: 1.2rem;
-         padding: 15px;
-     }
- 
-     .gengar-gif {
-         height: 30px;
-     }
- 
-     .table-container table {
-         font-size: 1rem;
-     }
- 
-     .table-container th, .table-container td {
-         padding: 8px;
-     }
- }
- 
- /* Widget Container */
- #affiliate-widget {
-     display: flex;
-     justify-content: center; /* Zentriert horizontal */
-     align-items: center; /* Zentriert vertikal */
-     overflow: auto;
-     width: 100%;
-     max-width: 350px; /* Maximale Breite */
-     margin: 0 auto; /* Automatische Ränder für Zentrierung */
-     padding: 10px 0;
-     height: 350px;
-     overflow-y: scroll;
-     border: 1px solid #15ff00;
-     border-radius: 10px;
-     background-color: rgba(0, 0, 0, 0.5);
-     -ms-overflow-style: none;
-     scrollbar-width: none;
- }
- 
- /* Anpassungen für mobile Geräte */
- @media (max-width: 600px) {
-     #affiliate-widget {
-         max-width: 80%; /* Reduziert die Breite auf 80% */
-         margin: 20px auto; /* Zentriert den Container */
-         height: auto; /* Höhe kann auf "auto" gesetzt werden, um sich der Inhaltshöhe anzupassen */
-     }
- }
- 
- /* Entfernt den Scrollbar */
- #affiliate-widget::-webkit-scrollbar {
-     width: 0px; 
-     height: 0px; 
- }
- 
- 
- /* Widget Product */
- .widget-product {
-     width: 120px; 
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     text-align: center;
-     margin: 10px; 
- }
- 
- .product-image img {
-     width: 100px; 
-     height: auto;
- }
- 
- .product-name,
- .product-price {
-     margin-top: 5px;
- }
- 
- /* Glow-Effekt für die Widget-Überschrift */
- .widget-title {
-     font-size: 1.5rem;  
-     color: #D3D3D3;  
-     text-shadow: 3px 3px 10px rgba(41, 63, 41, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);  
-     -webkit-text-stroke: 1.5px black;  
-     text-stroke: 1.5px black;  
-     font-weight: bold;  
-     text-align: center;  
-     margin-bottom: 10px;  
-     margin-top: 20px;  
-     display: block;
- 
+/* Container */
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.267);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+    border: 3px solid black;
+    margin: 0 auto; /* Stellt sicher, dass der Container in der Mitte der Seite bleibt */
+}
+
+/* Title */
+.title {
+    font-size: 2rem;
+    color: #D3D3D3;
+    text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);
+    -webkit-text-stroke: 1.5px black;
+    text-stroke: 1.5px black;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Glow-Effekt für Links bei Hover */
+.link {
+    display: block;
+    margin: 12px 0;
+    padding: 15px;
+    background: linear-gradient(145deg, #000000c9, #32cd32c0);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 1.4rem;
+    border: 2px solid black;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+    text-shadow: none;
+}
+
+/* Glow-Effekt für den gesamten Button bei Hover */
+.link:hover {
+    background: linear-gradient(145deg, #32cd32ad, #000000b2);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
+    text-shadow: 0 0 15px rgba(0, 255, 0, 1);
+}
+
+/* Instagram GIF Style */
+.link img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* GIF Container */
+.gif-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.gif-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Preislistentabelle */
+.table-container {
+    margin-top: 30px;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Zentriert die Tabelle horizontal */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* Sicherstellen, dass die Tabelle nicht über den Container hinausragt */
+}
+
+/* Tabellenüberschrift und Zellen */
+.table-container th, .table-container td {
+    padding: 15px;
+    border: 2px solid #32CD32;
+    text-align: left;
+}
+
+/* Transparente Hintergrundfarben für den Tabellen-Header */
+.table-container th {
+    background-color: rgba(50, 205, 50, 0.6);
+    font-weight: bold;
+    color: black;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+/* Transparenter Hintergrund für Zellen */
+.table-container td {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.table-container tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Hover-Effekt für Tabellenzeilen */
+.table-container tr:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
+}
+/* Anpassungen für mobile Geräte */
+@media (max-width: 600px) {
+    .table-container {
+        padding: 15px;
+        width: 90%; /* Reduziert die Breite */
+        margin: 0 auto; /* Zentriert den Container */
+        display: flex;
+        justify-content: center; /* Zentriert den Inhalt */
+        align-items: center; /* Vertikale Zentrierung */
+    }
+
+    .table-container table {
+        font-size: 0.9rem; /* Kleinere Schriftgröße */
+        width: 100%; /* Tabellenbreite auf 100% */
+    }
+
+    .table-container th, .table-container td {
+        padding: 10px; /* Weniger Padding */
+    }
+}
+
+
+
+.footer {
+    font-size: 1rem;
+    color: black;
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    font-family: 'UnifrakturCook', cursive;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* Responsives Design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        flex-wrap: nowrap;
+    }
+
+    .link {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .gengar-gif {
+        height: 30px;
+    }
+
+    .table-container table {
+        font-size: 1rem;
+    }
+
+    .table-container th, .table-container td {
+        padding: 8px;
+    }
+}
+
+/* Widget Container */
+#affiliate-widget {
+    display: flex;
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+    overflow: auto;
+    width: 100%;
+    max-width: 350px; /* Maximale Breite */
+    margin: 0 auto; /* Automatische Ränder für Zentrierung */
+    padding: 10px 0;
+    height: 350px;
+    overflow-y: scroll;
+    border: 1px solid #15ff00;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Anpassungen für mobile Geräte */
+@media (max-width: 600px) {
+    #affiliate-widget {
+        max-width: 80%; /* Reduziert die Breite auf 80% */
+        margin: 20px auto; /* Zentriert den Container */
+        height: auto; /* Höhe kann auf "auto" gesetzt werden, um sich der Inhaltshöhe anzupassen */
+    }
+}
+
+/* Entfernt den Scrollbar */
+#affiliate-widget::-webkit-scrollbar {
+    width: 0px; 
+    height: 0px; 
+}
+
+
+/* Widget Product */
+.widget-product {
+    width: 120px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px; 
+}
+
+.product-image img {
+    width: 100px; 
+    height: auto;
+}
+
+.product-name,
+.product-price {
+    margin-top: 5px;
+}
+
+/* Glow-Effekt für die Widget-Überschrift */
+.widget-title {
+    font-size: 1.5rem;  
+    color: #D3D3D3;  
+    text-shadow: 3px 3px 10px rgba(41, 63, 41, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);  
+    -webkit-text-stroke: 1.5px black;  
+    text-stroke: 1.5px black;  
+    font-weight: bold;  
+    text-align: center;  
+    margin-bottom: 10px;  
+    margin-top: 20px;  
+    display: block;
+}
