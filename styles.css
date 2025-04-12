@@ -101,11 +101,10 @@ body {
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center; /* Zentriert die Tabelle horizontal */
+    display: block;  /* Ändere von flex zu block für eine bessere Tabellenanzeige */
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%; /* Sicherstellen, dass die Tabelle nicht über den Container hinausragt */
+    max-width: 100%; /* Hier bleibt max-width, um sicherzustellen, dass die Tabelle nicht zu breit wird */
 }
 
 /* Tabellenüberschrift und Zellen */
@@ -138,6 +137,7 @@ body {
     transform: scale(1.02);
     box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
 }
+
 /* Anpassungen für mobile Geräte */
 @media (max-width: 600px) {
     .table-container {
