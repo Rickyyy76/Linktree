@@ -100,6 +100,9 @@ body {
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Zentriert die Tabelle horizontal */
+    align-items: center; /* Zentriert die Tabelle vertikal */
 }
 
 /* Tabellenüberschrift und Zellen */
@@ -133,8 +136,26 @@ body {
     box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
 }
 
-/* Footer */
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+/* Anpassungen für mobile Geräte */
+@media (max-width: 600px) {
+    .table-container {
+        padding: 15px;
+        width: 90%; /* Reduziert die Breite */
+        margin: 0 auto; /* Zentriert den Container */
+        display: flex;
+        justify-content: center; /* Zentriert den Inhalt */
+        align-items: center; /* Vertikale Zentrierung */
+    }
+
+    .table-container table {
+        font-size: 0.9rem; /* Kleinere Schriftgröße */
+        width: 100%; /* Tabellenbreite auf 100% */
+    }
+
+    .table-container th, .table-container td {
+        padding: 10px; /* Weniger Padding */
+    }
+}
 
 .footer {
     font-size: 1rem;
