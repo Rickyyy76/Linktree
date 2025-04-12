@@ -1,4 +1,21 @@
-body { 
+/* Globale Variablen für Farben */
+:root {
+    --primary-color: #32cd32;
+    --secondary-color: rgba(0, 255, 0, 0.8);
+    --dark-bg-color: rgba(0, 0, 0, 0.6);
+    --light-bg-color: rgba(0, 255, 0, 0.1);
+    --border-color: #15ff00;
+}
+
+/* Box-Sizing für die gesamte Seite */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -16,7 +33,7 @@ body {
 
 /* Container */
 .container {
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--dark-bg-color);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.267);
@@ -31,7 +48,7 @@ body {
 .title {
     font-size: 2rem;
     color: #D3D3D3;
-    text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);
+    text-shadow: 3px 3px 10px var(--secondary-color), 0 0 25px var(--secondary-color);
     -webkit-text-stroke: 1.5px black;
     text-stroke: 1.5px black;
     margin-bottom: 15px;
@@ -47,7 +64,7 @@ body {
     display: block;
     margin: 12px 0;
     padding: 15px;
-    background: linear-gradient(145deg, #000000c9, #32cd32c0);
+    background: linear-gradient(145deg, #000000c9, var(--primary-color));
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -64,12 +81,12 @@ body {
     text-shadow: none;
 }
 
-/* Glow-Effekt für den gesamten Button bei Hover */
+/* Hover-Effekt für Links */
 .link:hover {
-    background: linear-gradient(145deg, #32cd32ad, #000000b2);
+    background: linear-gradient(145deg, var(--primary-color), #000000b2);
     transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8);
-    text-shadow: 0 0 15px rgba(0, 255, 0, 1);
+    box-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+    text-shadow: 0 0 15px var(--secondary-color);
 }
 
 /* Instagram GIF Style */
@@ -101,17 +118,17 @@ body {
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Zentriert die Tabelle horizontal */
-    align-items: center; /* Zentriert die Tabelle vertikal */
-    margin-left: auto; /* Zentriert den Container nach links */
-    margin-right: auto; /* Zentriert den Container nach rechts */
-    max-width: 800px; /* Maximale Breite der Tabelle */
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
 }
 
 /* Tabellenüberschrift und Zellen */
 .table-container th, .table-container td {
     padding: 15px;
-    border: 2px solid #32CD32;
+    border: 2px solid var(--primary-color);
     text-align: left;
 }
 
@@ -120,48 +137,17 @@ body {
     background-color: rgba(50, 205, 50, 0.6);
     font-weight: bold;
     color: black;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
-}
-
-/* Transparenter Hintergrund für Zellen */
-.table-container td {
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.table-container tr:nth-child(even) td {
-    background-color: rgba(0, 0, 0, 0.35);
+    text-shadow: 0 0 5px var(--secondary-color);
 }
 
 /* Hover-Effekt für Tabellenzeilen */
 .table-container tr:hover {
-    background-color: rgba(0, 255, 0, 0.1);
+    background-color: var(--light-bg-color);
     transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
+    box-shadow: 0 4px 10px var(--secondary-color);
 }
 
-/* Anpassungen für mobile Geräte */
-@media (max-width: 600px) {
-    .table-container {
-        padding: 15px;
-        width: 90%; /* Reduziert die Breite */
-        margin: 0 auto; /* Zentriert den Container */
-        display: flex;
-        justify-content: center; /* Zentriert den Inhalt */
-        align-items: center; /* Vertikale Zentrierung */
-    }
-
-    .table-container table {
-        font-size: 0.9rem; /* Kleinere Schriftgröße */
-        width: 100%; /* Tabellenbreite auf 100% */
-    }
-
-    .table-container th, .table-container td {
-        padding: 10px; /* Weniger Padding */
-    }
-}
-
-
-
+/* Footer Styling */
 .footer {
     font-size: 1rem;
     color: black;
@@ -170,86 +156,45 @@ body {
     text-align: center;
     width: 100%;
     font-family: 'UnifrakturCook', cursive;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
-}
-
-/* Responsives Design */
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
-        padding: 20px;
-    }
-    
-    .title {
-        font-size: 1.8rem;
-        flex-wrap: nowrap;
-    }
-
-    .link {
-        font-size: 1.2rem;
-        padding: 15px;
-    }
-
-    .gengar-gif {
-        height: 30px;
-    }
-
-    .table-container table {
-        font-size: 1rem;
-    }
-
-    .table-container th, .table-container td {
-        padding: 8px;
-    }
+    text-shadow: 0 0 10px var(--secondary-color);
 }
 
 /* Widget Container */
 #affiliate-widget {
     display: flex;
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
+    justify-content: center;
+    align-items: center;
     overflow: auto;
     width: 100%;
-    max-width: 350px; /* Maximale Breite */
-    margin: 0 auto; /* Automatische Ränder für Zentrierung */
+    max-width: 350px;
+    margin: 0 auto;
     padding: 10px 0;
     height: 350px;
     overflow-y: scroll;
-    border: 1px solid #15ff00;
+    border: 1px solid var(--primary-color);
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-/* Anpassungen für mobile Geräte */
-@media (max-width: 600px) {
-    #affiliate-widget {
-        max-width: 80%; /* Reduziert die Breite auf 80% */
-        margin: 20px auto; /* Zentriert den Container */
-        height: auto; /* Höhe kann auf "auto" gesetzt werden, um sich der Inhaltshöhe anzupassen */
-    }
-}
-
-/* Entfernt den Scrollbar */
 #affiliate-widget::-webkit-scrollbar {
-    width: 0px; 
-    height: 0px; 
+    width: 0px;
+    height: 0px;
 }
-
 
 /* Widget Product */
 .widget-product {
-    width: 120px; 
+    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 10px; 
+    margin: 10px;
 }
 
 .product-image img {
-    width: 100px; 
+    width: 100px;
     height: auto;
 }
 
@@ -260,14 +205,46 @@ body {
 
 /* Glow-Effekt für die Widget-Überschrift */
 .widget-title {
-    font-size: 1.5rem;  
-    color: #D3D3D3;  
-    text-shadow: 3px 3px 10px rgba(41, 63, 41, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);  
-    -webkit-text-stroke: 1.5px black;  
-    text-stroke: 1.5px black;  
-    font-weight: bold;  
-    text-align: center;  
-    margin-bottom: 10px;  
-    margin-top: 20px;  
+    font-size: 1.5rem;
+    color: #D3D3D3;
+    text-shadow: 3px 3px 10px rgba(41, 63, 41, 0.8), 0 0 25px var(--secondary-color);
+    -webkit-text-stroke: 1.5px black;
+    text-stroke: 1.5px black;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
     display: block;
+}
+
+/* Responsives Design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        flex-wrap: nowrap;
+    }
+
+    .link {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .table-container table {
+        font-size: 1rem;
+    }
+
+    .table-container th, .table-container td {
+        padding: 8px;
+    }
+
+    #affiliate-widget {
+        max-width: 80%;
+        margin: 20px auto;
+        height: auto;
+    }
 }
