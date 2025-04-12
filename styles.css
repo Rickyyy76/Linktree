@@ -181,27 +181,84 @@ body {
     justify-content: center;
     align-items: center;
     overflow: auto;
-    width: 100%; /* Volle Breite des Containers */
-    max-width: 350px; /* Maximale Breite der Box */
-    margin: 0 auto; /* Zentriert die Box horizontal */
-    padding: 10px 0; /* Fügt oben und unten etwas Abstand hinzu */
+    width: 100%; 
+    max-width: 350px; 
+    margin: 0 auto; 
+    padding: 10px 0;
 }
 
 .widget-product {
-    width: 120px; /* Größe der einzelnen Widgets */
+    width: 120px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 10px; /* Abstand zwischen den Widgets */
+    margin: 10px; 
 }
 
 .product-image img {
-    width: 100px; /* Größe der Produktbilder */
+    width: 100px; 
     height: auto;
 }
 
 .product-name,
 .product-price {
     margin-top: 5px;
+}
+#affiliate-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;  
+    width: 100%; 
+    max-width: 350px; 
+    margin: 0 auto; 
+    padding: 10px 0; 
+}
+
+#affiliate-widget::-webkit-scrollbar {
+    width: 0px; 
+    height: 0px; 
+}
+
+
+#affiliate-widget {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+/* Glow-Effekt für die Widget-Überschrift */
+.widget-title {
+    font-size: 1.5rem;  
+    color: #D3D3D3;  
+    text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);  
+    -webkit-text-stroke: 1.5px black;  
+    text-stroke: 1.5px black;  
+    font-weight: bold;  
+    text-align: center;  
+    margin-bottom: 10px;  
+    margin-top: 20px;  
+    display: block;
+}
+
+/* Container für das Widget */
+#affiliate-widget {
+    width: 350px; 
+    height: 350px; 
+    overflow-y: scroll; 
+    padding: 10px; 
+    border: 1px solid #32CD32; 
+    border-radius: 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Falls die Scrollleiste unsichtbar sein soll */
+#affiliate-widget::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+#affiliate-widget {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
