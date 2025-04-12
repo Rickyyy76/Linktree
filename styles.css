@@ -243,13 +243,15 @@ body {
 
 /* Container für das Widget */
 #affiliate-widget {
-    width: 350px; 
-    height: 350px; 
-    overflow-y: scroll; 
-    padding: 10px; 
-    border: 1px solid #32CD32; 
-    border-radius: 10px; 
-    background-color: rgba(0, 0, 0, 0.5); 
+    width: 100%; /* Vollständige Breite des Containers */
+    max-width: 350px; /* Maximale Breite des Containers */
+    height: auto; /* Automatische Höhe */
+    overflow-y: scroll; /* Vertikales Scrollen für den Inhalt */
+    padding: 10px;
+    border: 1px solid #32CD32;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto; /* Zentrierung */
 }
 
 /* Falls die Scrollleiste unsichtbar sein soll */
@@ -261,4 +263,14 @@ body {
 #affiliate-widget {
     -ms-overflow-style: none;  
     scrollbar-width: none;  
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #affiliate-widget {
+        width: 100%; /* Vollständige Breite auf kleinen Geräten */
+        max-width: 100%; /* Maximale Breite auch 100% */
+        height: auto; /* Automatische Höhe */
+        padding: 10px;
+    }
 }
