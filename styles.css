@@ -26,8 +26,9 @@ body {
     color: white;
     border: 3px solid black;
     margin: 0 auto; /* Stellt sicher, dass der Container in der Mitte der Seite bleibt */
+    display: block; /* Flexbox deaktiviert, um den Container standardmäßig blockweise anzuzeigen */
+    box-sizing: border-box; /* Stellt sicher, dass Padding und Border nicht die Breite beeinflussen */
 }
-
 /* Title */
 .title {
     font-size: 2rem;
@@ -99,12 +100,12 @@ body {
     background-color: transparent;
     border-radius: 15px;
     padding: 20px;
-    width: 100%;
+    width: 100%; /* Stellt sicher, dass die Tabelle die Breite des Containers nicht überschreitet */
+    max-width: 100%; /* Maximale Breite der Tabelle */
     box-sizing: border-box;
-    display: block;  /* Ändere von flex zu block für eine bessere Tabellenanzeige */
     margin-left: auto;
-    margin-right: auto;
-    max-width: 100%; /* Hier bleibt max-width, um sicherzustellen, dass die Tabelle nicht zu breit wird */
+    margin-right: auto; /* Zentriert die Tabelle */
+    display: block; /* Wechselt von Flexbox zu Block-Layout */
 }
 
 /* Tabellenüberschrift und Zellen */
