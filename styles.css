@@ -183,17 +183,26 @@ body {
     justify-content: center; /* Zentriert horizontal */
     align-items: center; /* Zentriert vertikal */
     overflow: auto;
-    width: 100%; 
+    width: 100%;
     max-width: 350px; /* Maximale Breite */
-    margin: 0 auto; 
+    margin: 0 auto; /* Automatische Ränder für Zentrierung */
     padding: 10px 0;
-    height: 350px; 
-    overflow-y: scroll; 
-    border: 1px solid #32CD32; 
-    border-radius: 10px; 
-    background-color: rgba(0, 0, 0, 0.5); 
-    -ms-overflow-style: none;  
+    height: 350px;
+    overflow-y: scroll;
+    border: 1px solid #15ff00;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+/* Anpassungen für mobile Geräte */
+@media (max-width: 600px) {
+    #affiliate-widget {
+        max-width: 80%; /* Reduziert die Breite auf 80% */
+        margin: 20px auto; /* Zentriert den Container */
+        height: auto; /* Höhe kann auf "auto" gesetzt werden, um sich der Inhaltshöhe anzupassen */
+    }
 }
 
 /* Entfernt den Scrollbar */
@@ -227,7 +236,7 @@ body {
 .widget-title {
     font-size: 1.5rem;  
     color: #D3D3D3;  
-    text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);  
+    text-shadow: 3px 3px 10px rgba(41, 63, 41, 0.8), 0 0 25px rgba(0, 255, 0, 0.8);  
     -webkit-text-stroke: 1.5px black;  
     text-stroke: 1.5px black;  
     font-weight: bold;  
