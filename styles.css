@@ -25,9 +25,6 @@ body {
     text-align: center;
     color: white;
     border: 3px solid black;
-    margin: 0 auto; /* Stellt sicher, dass der Container in der Mitte der Seite bleibt */
-    display: block; /* Flexbox deaktiviert, um den Container standardmäßig blockweise anzuzeigen */
-    box-sizing: border-box; /* Stellt sicher, dass Padding und Border nicht die Breite beeinflussen */
 }
 /* Title */
 .title {
@@ -100,12 +97,19 @@ body {
     background-color: transparent;
     border-radius: 15px;
     padding: 20px;
-    width: 100%; /* Stellt sicher, dass die Tabelle die Breite des Containers nicht überschreitet */
-    max-width: 100%; /* Maximale Breite der Tabelle */
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     margin-left: auto;
-    margin-right: auto; /* Zentriert die Tabelle */
-    display: block; /* Wechselt von Flexbox zu Block-Layout */
+    margin-right: auto;
+    display: block;
+    overflow-x: auto; /* Ermöglicht horizontales Scrollen bei zu breiten Tabellen */
+}
+
+/* Tabelle selbst */
+.table-container table {
+    width: 100%;
+    table-layout: auto; /* Anpassung der Tabelle an den Inhalt */
 }
 
 /* Tabellenüberschrift und Zellen */
@@ -143,23 +147,20 @@ body {
 @media (max-width: 600px) {
     .table-container {
         padding: 15px;
-        width: 90%; /* Reduziert die Breite */
-        margin: 0 auto; /* Zentriert den Container */
-        display: flex;
-        justify-content: center; /* Zentriert den Inhalt */
-        align-items: center; /* Vertikale Zentrierung */
+        width: 100%;
+        margin: 0 auto;
     }
 
+    /* Wenn die Tabelle zu groß ist, wird sie scrollen können */
     .table-container table {
-        font-size: 0.9rem; /* Kleinere Schriftgröße */
-        width: 100%; /* Tabellenbreite auf 100% */
+        width: auto; /* Verhindert, dass sie auf 100% gedehnt wird */
+        min-width: 100%; /* Sorgt dafür, dass die Tabelle immer mindestens so breit wie der Container bleibt */
     }
 
     .table-container th, .table-container td {
         padding: 10px; /* Weniger Padding */
     }
 }
-
 
 
 .footer {
