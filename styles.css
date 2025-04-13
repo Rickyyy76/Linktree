@@ -273,3 +273,35 @@ body {
     margin-top: 20px;  
     display: block;
 }
+.side-content {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px;
+  }
+  
+  .side-content img {
+    width: 240px; /* statt 100px */
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(9, 255, 0, 0.801);
+  }
+  
+  .side-content.right {
+    right: 40px; /* statt 10px */
+  }
+  
+  .side-content.left {
+    left: 40px;
+  }
+  
+  /* Mobile verstecken */
+  @media (max-width: 768px) {
+    .side-content {
+      display: none;
+    }
+  }
+  
