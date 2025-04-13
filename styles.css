@@ -19,7 +19,7 @@ body {
     background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.267);
+    box-shadow: 0 0 15px 5px #15ff00a8;
     width: 90%;
     max-width: 500px;
     text-align: center;
@@ -103,13 +103,13 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    overflow-x: auto; /* Ermöglicht horizontales Scrollen bei zu breiten Tabellen */
+    overflow-x: auto; 
 }
 
 /* Tabelle selbst */
 .table-container table {
     width: 100%;
-    table-layout: auto; /* Anpassung der Tabelle an den Inhalt */
+    table-layout: auto; 
 }
 
 /* Tabellenüberschrift und Zellen */
@@ -151,14 +151,14 @@ body {
         margin: 0 auto;
     }
 
-    /* Wenn die Tabelle zu groß ist, wird sie scrollen können */
+    /* Wenn Tabelle zu groß, scrollen  */
     .table-container table {
-        width: auto; /* Verhindert, dass sie auf 100% gedehnt wird */
-        min-width: 100%; /* Sorgt dafür, dass die Tabelle immer mindestens so breit wie der Container bleibt */
+        width: auto; 
+        min-width: 100%; 
     }
 
     .table-container th, .table-container td {
-        padding: 10px; /* Weniger Padding */
+        padding: 10px; 
     }
 }
 
@@ -207,12 +207,12 @@ body {
 /* Widget Container */
 #affiliate-widget {
     display: flex;
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
+    justify-content: center; 
+    align-items: center; 
     overflow: auto;
     width: 100%;
-    max-width: 350px; /* Maximale Breite */
-    margin: 0 auto; /* Automatische Ränder für Zentrierung */
+    max-width: 350px; 
+    margin: 0 auto; 
     padding: 10px 0;
     height: 350px;
     overflow-y: scroll;
@@ -227,9 +227,9 @@ body {
 /* Anpassungen für mobile Geräte */
 @media (max-width: 600px) {
     #affiliate-widget {
-        max-width: 80%; /* Reduziert die Breite auf 80% */
-        margin: 20px auto; /* Zentriert den Container */
-        height: auto; /* Höhe kann auf "auto" gesetzt werden, um sich der Inhaltshöhe anzupassen */
+        max-width: 80%; 
+        margin: 20px auto; 
+        height: auto; 
     }
 }
 
