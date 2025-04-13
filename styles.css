@@ -285,7 +285,7 @@ body {
   }
   
   .side-content img {
-    width: 240px; /* statt 100px */
+    width: 220px; /* statt 100px */
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(9, 255, 0, 0.801);
   }
