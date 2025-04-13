@@ -221,6 +221,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     -ms-overflow-style: none;
     scrollbar-width: none;
+    box-shadow: 0 0 15px 5px #15ff00;
 }
 
 /* Anpassungen für mobile Geräte */
