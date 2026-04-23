@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -16,8 +17,8 @@
   <style>
 /* === DESIGN TOKENS === */
 :root {
-  --bg: #020203;
-  --bg-2: #080a0d;
+  --bg: #07080a;
+  --bg-2: #0e1013;
   --surface: rgba(255, 255, 255, 0.04);
   --surface-hover: rgba(255, 255, 255, 0.07);
   --border: rgba(255, 255, 255, 0.08);
@@ -35,517 +36,517 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-- { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 html { scroll-behavior: smooth; }
 
 body {
-font-family: ‘Space Grotesk’, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-margin: 0;
-padding: 0;
-background: var(--bg);
-color: var(--text);
-line-height: 1.5;
-min-height: 100vh;
-overflow-x: hidden;
-padding-bottom: env(safe-area-inset-bottom);
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .bg-mesh {
-position: fixed;
-inset: 0;
-background:
-radial-gradient(ellipse 80% 60% at 20% 10%, rgba(74, 222, 128, 0.18), transparent 50%),
-radial-gradient(ellipse 70% 60% at 80% 90%, rgba(168, 85, 247, 0.15), transparent 50%),
-radial-gradient(ellipse 60% 40% at 50% 50%, rgba(74, 222, 128, 0.05), transparent 60%);
-z-index: -2;
-animation: mesh-drift 20s ease-in-out infinite alternate;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(74, 222, 128, 0.18), transparent 50%),
+    radial-gradient(ellipse 70% 60% at 80% 90%, rgba(168, 85, 247, 0.15), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(74, 222, 128, 0.05), transparent 60%);
+  z-index: -2;
+  animation: mesh-drift 20s ease-in-out infinite alternate;
 }
 
 .bg-grid {
-position: fixed;
-inset: 0;
-background-image:
-linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-background-size: 48px 48px;
-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%);
-z-index: -1;
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%);
+  z-index: -1;
 }
 
 @keyframes mesh-drift {
-from { transform: translate(0, 0) scale(1); }
-to   { transform: translate(-5%, 3%) scale(1.1); }
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-5%, 3%) scale(1.1); }
 }
 
 .page {
-max-width: 520px;
-margin: 0 auto;
-padding: 32px 20px 80px;
-padding-top: max(32px, env(safe-area-inset-top));
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+  padding-top: max(32px, env(safe-area-inset-top));
 }
 
 /* === PROFIL === */
 .profile {
-text-align: center;
-margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .avatar-ring {
-position: relative;
-width: 112px;
-height: 112px;
-margin: 0 auto 18px;
-padding: 3px;
-border-radius: 50%;
-background: var(--accent--gradient);
-box-shadow: 0 0 48px rgba(74, 222, 128, 0.25), 0 0 0 8px rgba(74, 222, 128, 0.06);
-animation: ring-glow 3s ease-in-out infinite;
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 18px;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 48px rgba(74, 222, 128, 0.25), 0 0 0 8px rgba(74, 222, 128, 0.06);
+  animation: ring-glow 3s ease-in-out infinite;
 }
 
 .avatar {
-width: 100%;
-height: 100%;
-border-radius: 50%;
-object-fit: cover;
-border: 3px solid var(--bg);
-display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg);
+  display: block;
 }
 
 .avatar-status {
-position: absolute;
-bottom: 6px;
-right: 6px;
-width: 18px;
-height: 18px;
-border-radius: 50%;
-background: var(--accent);
-border: 3px solid var(--bg);
-box-shadow: 0 0 12px var(--accent);
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 12px var(--accent);
 }
 
 @keyframes ring-glow {
-0%, 100% { box-shadow: 0 0 48px rgba(74, 222, 128, 0.25), 0 0 0 8px rgba(74, 222, 128, 0.06); }
-50%      { box-shadow: 0 0 64px rgba(168, 85, 247, 0.35), 0 0 0 10px rgba(168, 85, 247, 0.08); }
+  0%, 100% { box-shadow: 0 0 48px rgba(74, 222, 128, 0.25), 0 0 0 8px rgba(74, 222, 128, 0.06); }
+  50%      { box-shadow: 0 0 64px rgba(168, 85, 247, 0.35), 0 0 0 10px rgba(168, 85, 247, 0.08); }
 }
 
 .username {
-font-size: 1.75rem;
-font-weight: 700;
-margin: 0 0 6px;
-letter-spacing: -0.02em;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
 }
 
 .username .suffix {
-background: var(--accent--gradient);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .bio {
-font-size: 0.95rem;
-color: var(--text--dim);
-margin: 0 0 18px;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin: 0 0 18px;
 }
 
 .socials {
-display: flex;
-justify-content: center;
-gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .social-btn {
-width: 44px;
-height: 44px;
-display: grid;
-place-items: center;
-border-radius: 50%;
-background: var(--surface);
-border: 1px solid var(--border);
-color: var(--text);
-text-decoration: none;
-transition: all 0.25s var(--ease);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
 }
 
 .social-btn svg { width: 20px; height: 20px; }
 
 .social-btn:hover,
 .social-btn:active {
-background: var(--surface--hover);
-border-color: var(--accent);
-color: var(--accent);
-transform: translateY(-2px);
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* === SECTIONS === */
 .section { margin-bottom: 32px; }
 
 .section-head {
-display: flex;
-align-items: center;
-justify-content: space-between;
-margin: 0 4px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 4px 12px;
 }
 
 .section-title {
-font-size: 0.85rem;
-font-weight: 600;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: var(--text--dim);
-margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0;
 }
 
 .section-tag {
-font-size: 0.7rem;
-font-weight: 600;
-padding: 4px 10px;
-border-radius: 999px;
-background: rgba(74, 222, 128, 0.12);
-color: var(--accent);
-letter-spacing: 0.05em;
-text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* === CARDS === */
 .card {
-display: flex;
-align-items: center;
-gap: 14px;
-padding: 16px 18px;
-margin-bottom: 10px;
-background: var(--surface);
-border: 1px solid var(--border);
-border-radius: var(--radius);
-text-decoration: none;
-color: var(--text);
-transition: all 0.25s var(--ease);
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
-position: relative;
-overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.25s var(--ease);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
 }
 
 .card::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.03) 100%);
-pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.03) 100%);
+  pointer-events: none;
 }
 
 .card:hover,
 .card:active {
-background: var(--surface--hover);
-border-color: var(--border--strong);
-transform: translateY(-2px);
-box-shadow: var(--shadow);
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
-.card–green:hover {
-border-color: rgba(74, 222, 128, 0.4);
-box-shadow: 0 6px 28px rgba(74, 222, 128, 0.18);
+.card--green:hover {
+  border-color: rgba(74, 222, 128, 0.4);
+  box-shadow: 0 6px 28px rgba(74, 222, 128, 0.18);
 }
 
-.card–purple:hover {
-border-color: rgba(168, 85, 247, 0.4);
-box-shadow: 0 6px 28px rgba(168, 85, 247, 0.18);
+.card--purple:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 6px 28px rgba(168, 85, 247, 0.18);
 }
 
 .card-icon {
-flex-shrink: 0;
-width: 44px;
-height: 44px;
-display: grid;
-place-items: center;
-background: rgba(255,255,255,0.04);
-border: 1px solid var(--border);
-border-radius: 12px;
-font-size: 1.4rem;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 1.4rem;
 }
 
-.card–green .card-icon {
-background: rgba(74, 222, 128, 0.1);
-border-color: rgba(74, 222, 128, 0.25);
+.card--green .card-icon {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: rgba(74, 222, 128, 0.25);
 }
 
-.card–purple .card-icon {
-background: rgba(168, 85, 247, 0.1);
-border-color: rgba(168, 85, 247, 0.25);
+.card--purple .card-icon {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.25);
 }
 
 .card-body {
-flex: 1;
-display: flex;
-flex-direction: column;
-min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .card-title {
-font-weight: 600;
-font-size: 1rem;
-line-height: 1.2;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 .card-sub {
-font-size: 0.82rem;
-color: var(--text--dim);
-margin-top: 3px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-top: 3px;
 }
 
 .card-arrow {
-flex-shrink: 0;
-font-size: 1.2rem;
-color: var(--text--muted);
-transition: transform 0.25s var(--ease), color 0.25s var(--ease);
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  transition: transform 0.25s var(--ease), color 0.25s var(--ease);
 }
 
 .card:hover .card-arrow {
-transform: translateX(4px);
-color: var(--text);
+  transform: translateX(4px);
+  color: var(--text);
 }
 
 /* === SHOP TOOLBAR === */
 .shop-toolbar { margin-top: 20px; }
 
 .search-wrap {
-position: relative;
-margin-bottom: 12px;
+  position: relative;
+  margin-bottom: 12px;
 }
 
 .search-icon {
-position: absolute;
-left: 14px;
-top: 50%;
-transform: translateY(-50%);
-width: 18px;
-height: 18px;
-color: var(--text--muted);
-pointer-events: none;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  pointer-events: none;
 }
 
 .search-input {
-width: 100%;
-padding: 13px 14px 13px 42px;
-background: var(--surface);
-border: 1px solid var(--border);
-border-radius: var(--radius--sm);
-color: var(--text);
-font-family: inherit;
-font-size: 0.95rem;
-outline: none;
-transition: all 0.2s var(--ease);
+  width: 100%;
+  padding: 13px 14px 13px 42px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s var(--ease);
 }
 
-.search-input::placeholder { color: var(--text--muted); }
+.search-input::placeholder { color: var(--text-muted); }
 
 .search-input:focus {
-border-color: var(--accent);
-box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.15);
-background: var(--surface--hover);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.15);
+  background: var(--surface-hover);
 }
 
 .pill-row {
-display: flex;
-gap: 8px;
-overflow-x: auto;
-padding-bottom: 4px;
-scrollbar-width: none;
--ms-overflow-style: none;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .pill-row::-webkit-scrollbar { display: none; }
 
 .pill {
-flex-shrink: 0;
-padding: 8px 14px;
-background: var(--surface);
-border: 1px solid var(--border);
-border-radius: 999px;
-color: var(--text--dim);
-font-family: inherit;
-font-size: 0.85rem;
-font-weight: 500;
-cursor: pointer;
-transition: all 0.2s var(--ease);
-white-space: nowrap;
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  white-space: nowrap;
 }
 
-.pill:hover { border-color: var(--border--strong); color: var(--text); }
+.pill:hover { border-color: var(--border-strong); color: var(--text); }
 
 .pill.active {
-background: var(--text);
-color: var(--bg);
-border-color: var(--text);
-font-weight: 600;
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  font-weight: 600;
 }
 
 .result-count {
-margin-top: 10px;
-font-size: 0.78rem;
-color: var(--text--muted);
-padding: 0 4px;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding: 0 4px;
 }
 
 /* === PRODUKT-GRID === */
 .product-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 10px;
-margin-top: 4px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 4px;
 }
 
 .product {
-display: flex;
-flex-direction: column;
-background: var(--surface);
-border: 1px solid var(--border);
-border-radius: var(--radius--sm);
-overflow: hidden;
-text-decoration: none;
-color: var(--text);
-transition: all 0.25s var(--ease);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.25s var(--ease);
 }
 
 .product:hover,
 .product:active {
-background: var(--surface--hover);
-border-color: var(--border--strong);
-transform: translateY(-3px);
-box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 .product-img {
-aspect-ratio: 1 / 1;
-background: var(--bg-2);
-overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-2);
+  overflow: hidden;
 }
 
 .product-img img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 0.4s var(--ease);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
 }
 
 .product:hover .product-img img { transform: scale(1.06); }
 
 .product-info {
-padding: 10px 12px 12px;
-display: flex;
-flex-direction: column;
-gap: 8px;
-flex: 1;
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
 }
 
 .product-name {
-font-size: 0.8rem;
-font-weight: 600;
-line-height: 1.3;
-display: -webkit-box;
--webkit-line-clamp: 2;
--webkit-box-orient: vertical;
-overflow: hidden;
-min-height: 2.1em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.1em;
 }
 
 .product-price {
-margin-top: auto;
-font-size: 0.85rem;
-font-weight: 700;
-color: var(--accent);
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 /* === EMPTY STATE === */
 .empty-state {
-text-align: center;
-padding: 40px 20px;
-color: var(--text--dim);
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-dim);
 }
 
 .empty-state span {
-font-size: 2rem;
-display: block;
-margin-bottom: 8px;
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 8px;
 }
 
 /* === TOP SEED BANKS === */
 .brand-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
 }
 
 .brand-card {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 8px;
-padding: 12px 8px;
-background: var(--surface);
-border: 1px solid var(--border);
-border-radius: var(--radius--sm);
-text-decoration: none;
-color: var(--text);
-transition: all 0.25s var(--ease);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.25s var(--ease);
 }
 
 .brand-card:hover,
 .brand-card:active {
-background: var(--surface--hover);
-border-color: var(--accent);
-transform: translateY(-2px);
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .brand-card img {
-width: 100%;
-aspect-ratio: 1 / 1;
-object-fit: contain;
-background: #fff;
-border-radius: 10px;
-padding: 8px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px;
 }
 
 .brand-name {
-font-size: 0.75rem;
-font-weight: 600;
-text-align: center;
-line-height: 1.2;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /* === FOOTER === */
 .footer {
-margin-top: 48px;
-text-align: center;
-font-size: 0.8rem;
-color: var(--text--muted);
+  margin-top: 48px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .footer .sig {
-background: var(--accent--gradient);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-font-weight: 600;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 400px) {
-.page { padding: 24px 16px 60px; }
-.username { font-size: 1.5rem; }
-.card { padding: 14px; }
-.card-icon { width: 40px; height: 40px; font-size: 1.2rem; }
-.card-title { font-size: 0.95rem; }
-.card-sub { font-size: 0.78rem; }
-.product-name { font-size: 0.75rem; }
+  .page { padding: 24px 16px 60px; }
+  .username { font-size: 1.5rem; }
+  .card { padding: 14px; }
+  .card-icon { width: 40px; height: 40px; font-size: 1.2rem; }
+  .card-title { font-size: 0.95rem; }
+  .card-sub { font-size: 0.78rem; }
+  .product-name { font-size: 0.75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-*, *::before, *::after {
-animation-duration: 0.01ms !important;
-transition-duration: 0.01ms !important;
-}
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 </style>
@@ -558,128 +559,125 @@ transition-duration: 0.01ms !important;
 
   <main class="page">
 
-```
-<header class="profile">
-  <div class="avatar-ring">
-    <img src="photo_2025-04-13_19-18-22.jpg" alt="Rickyyy" class="avatar" loading="eager">
-    <span class="avatar-status" aria-hidden="true"></span>
-  </div>
-  <h1 class="username">Rickyyy<span class="suffix">76</span></h1>
-  <p class="bio">🌿 Cannabis Patient · 💰 Crypto Degen · 🎮</p>
-  <div class="socials">
-    <a href="https://www.instagram.com/ricky.7six" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-btn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-      </svg>
-    </a>
-  </div>
-</header>
+    <header class="profile">
+      <div class="avatar-ring">
+        <img src="photo_2025-04-13_19-18-22.jpg" alt="Rickyyy" class="avatar" loading="eager">
+        <span class="avatar-status" aria-hidden="true"></span>
+      </div>
+      <h1 class="username">Rickyyy<span class="suffix">76</span></h1>
+      <p class="bio">🌿 Cannabis Patient · 💰 Crypto Degen · 🎮</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/ricky.7six" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+    </header>
 
-<section class="section">
-  <div class="section-head"><h2 class="section-title">Cannabis Patient</h2></div>
-  <a href="https://bloomwell.de/de/registrierung?referral_code=t0OfsiJ8" class="card card--green" target="_blank" rel="noopener noreferrer">
-    <span class="card-icon">🌿</span>
-    <span class="card-body"><span class="card-title">Bloomwell</span><span class="card-sub">Jetzt als Patient registrieren</span></span>
-    <span class="card-arrow" aria-hidden="true">→</span>
-  </a>
-</section>
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">Cannabis Patient</h2></div>
+      <a href="https://bloomwell.de/de/registrierung?referral_code=t0OfsiJ8" class="card card--green" target="_blank" rel="noopener noreferrer">
+        <span class="card-icon">🌿</span>
+        <span class="card-body"><span class="card-title">Bloomwell</span><span class="card-sub">Jetzt als Patient registrieren</span></span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
 
-<section class="section">
-  <div class="section-head"><h2 class="section-title">Crypto · Trading</h2></div>
-  <a href="https://axiom.trade/@r6cky" class="card card--purple" target="_blank" rel="noopener noreferrer">
-    <span class="card-icon">⚡</span>
-    <span class="card-body"><span class="card-title">Axiom Trading</span><span class="card-sub">Solana Trading Platform</span></span>
-    <span class="card-arrow" aria-hidden="true">→</span>
-  </a>
-  <a href="https://claimyoursol.com/Q1etEf6yhhwrpzD2WfLU" class="card card--purple" target="_blank" rel="noopener noreferrer">
-    <span class="card-icon">💎</span>
-    <span class="card-body"><span class="card-title">Solana Reclaim</span><span class="card-sub">SOL zurückholen</span></span>
-    <span class="card-arrow" aria-hidden="true">→</span>
-  </a>
-  <a href="https://gmgn.ai/?ref=JfV" class="card card--purple" target="_blank" rel="noopener noreferrer">
-    <span class="card-icon">📈</span>
-    <span class="card-body"><span class="card-title">GMGN</span><span class="card-sub">Memecoin Tracker</span></span>
-    <span class="card-arrow" aria-hidden="true">→</span>
-  </a>
-</section>
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">Crypto · Trading</h2></div>
+      <a href="https://axiom.trade/@r6cky" class="card card--purple" target="_blank" rel="noopener noreferrer">
+        <span class="card-icon">⚡</span>
+        <span class="card-body"><span class="card-title">Axiom Trading</span><span class="card-sub">Solana Trading Platform</span></span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="https://claimyoursol.com/Q1etEf6yhhwrpzD2WfLU" class="card card--purple" target="_blank" rel="noopener noreferrer">
+        <span class="card-icon">💎</span>
+        <span class="card-body"><span class="card-title">Solana Reclaim</span><span class="card-sub">SOL zurückholen</span></span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="https://gmgn.ai/?ref=JfV" class="card card--purple" target="_blank" rel="noopener noreferrer">
+        <span class="card-icon">📈</span>
+        <span class="card-body"><span class="card-title">GMGN</span><span class="card-sub">Memecoin Tracker</span></span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
 
-<section class="section">
-  <div class="section-head">
-    <h2 class="section-title">Amsterdam Seed Center</h2>
-    <span class="section-tag">Shop</span>
-  </div>
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Amsterdam Seed Center</h2>
+        <span class="section-tag">Shop</span>
+      </div>
 
-  <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/en/?affiliate_code=CPrOZdqBHg&amp;referring_service=banner&amp;element_id=4" class="card card--green">
-    <span class="card-icon">🌱</span>
-    <span class="card-body"><span class="card-title">Zum ASC Shop</span><span class="card-sub">Seeds · Strains · Zubehör</span></span>
-    <span class="card-arrow" aria-hidden="true">→</span>
-  </a>
+      <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/en/?affiliate_code=CPrOZdqBHg&amp;referring_service=banner&amp;element_id=4" class="card card--green">
+        <span class="card-icon">🌱</span>
+        <span class="card-body"><span class="card-title">Zum ASC Shop</span><span class="card-sub">Seeds · Strains · Zubehör</span></span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
 
-  <div class="shop-toolbar">
-    <div class="search-wrap">
-      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="search" id="product-search" class="search-input" placeholder="Strain oder Produkt suchen..." aria-label="Produkte suchen">
-    </div>
-    <div class="pill-row">
-      <button class="pill active" data-filter="all">Alle</button>
-      <button class="pill" data-filter="fem">🌸 Feminized</button>
-      <button class="pill" data-filter="auto">⚡ Autoflower</button>
-      <button class="pill" data-filter="access">🧪 Zubehör & CBD</button>
-    </div>
-    <div class="result-count" id="result-count"></div>
-  </div>
+      <div class="shop-toolbar">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="product-search" class="search-input" placeholder="Strain oder Produkt suchen..." aria-label="Produkte suchen">
+        </div>
+        <div class="pill-row">
+          <button class="pill active" data-filter="all">Alle</button>
+          <button class="pill" data-filter="fem">🌸 Feminized</button>
+          <button class="pill" data-filter="auto">⚡ Autoflower</button>
+          <button class="pill" data-filter="access">🧪 Zubehör & CBD</button>
+        </div>
+        <div class="result-count" id="result-count"></div>
+      </div>
 
-  <div class="product-grid" id="product-grid"></div>
-  <div class="empty-state" id="empty-state" hidden>
-    <span>🕵️</span>
-    <p>Nichts gefunden. Probier einen anderen Suchbegriff.</p>
-  </div>
-</section>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span>🕵️</span>
+        <p>Nichts gefunden. Probier einen anderen Suchbegriff.</p>
+      </div>
+    </section>
 
-<section class="section">
-  <div class="section-head"><h2 class="section-title">Top Seed Banks</h2></div>
-  <div class="brand-grid">
-    <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/barneys-farm?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
-      <img src="https://cannapio-com.s23.cdn-upgates.com/_cache/c/7/c7fba55d598bbe4f57a2f70ab06a2b44-barneys-farm-cannabis-seeds-cannapio.jpeg" alt="Barney's Farm" loading="lazy">
-      <div class="brand-name">Barney's Farm</div>
-    </a>
-    <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/cookies-seedbank?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
-      <img src="https://diehanfapotheke.de/wp-content/uploads/2024/11/cookies-logo.png" alt="Cookies" loading="lazy">
-      <div class="brand-name">Cookies</div>
-    </a>
-    <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/ripper-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
-      <img src="https://www.ripperseeds.com/img/ripperseeds-logo-1590591094.jpg" alt="Ripper Seeds" loading="lazy">
-      <div class="brand-name">Ripper Seeds</div>
-    </a>
-    <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/feminisierte-hanfsamen/royal-queen-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
-      <img src="https://www.hanfgartenshop.de/media/wysiwyg/Marken/Royal-Queen-Seeds/Royal-queen-seeds-logo.jpg" alt="Royal Queen Seeds" loading="lazy">
-      <div class="brand-name">RQS</div>
-    </a>
-    <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/feminisierte-hanfsamen/greenhouse-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
-      <img src="https://www.sirius.nl/images/brand_page/2/green-house-seed-company.png" alt="Green House" loading="lazy">
-      <div class="brand-name">Green House</div>
-    </a>
-    <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/humboldt-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
-      <img src="https://lessorganix.de/cdn/shop/collections/HSO_logo_small_ce9e6a13-1cd5-4886-b7d1-07f9a23235bf.png?v=1743236482" alt="Humboldt" loading="lazy">
-      <div class="brand-name">Humboldt</div>
-    </a>
-    <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/fast-buds-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
-      <img src="https://bloomtech.de/media/image/manufacturer/181/lg/fastbuds.jpg" alt="Fast Buds" loading="lazy">
-      <div class="brand-name">Fast Buds</div>
-    </a>
-  </div>
-</section>
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">Top Seed Banks</h2></div>
+      <div class="brand-grid">
+        <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/barneys-farm?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
+          <img src="https://cannapio-com.s23.cdn-upgates.com/_cache/c/7/c7fba55d598bbe4f57a2f70ab06a2b44-barneys-farm-cannabis-seeds-cannapio.jpeg" alt="Barney's Farm" loading="lazy">
+          <div class="brand-name">Barney's Farm</div>
+        </a>
+        <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/cookies-seedbank?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
+          <img src="https://diehanfapotheke.de/wp-content/uploads/2024/11/cookies-logo.png" alt="Cookies" loading="lazy">
+          <div class="brand-name">Cookies</div>
+        </a>
+        <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/ripper-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
+          <img src="https://www.ripperseeds.com/img/ripperseeds-logo-1590591094.jpg" alt="Ripper Seeds" loading="lazy">
+          <div class="brand-name">Ripper Seeds</div>
+        </a>
+        <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/feminisierte-hanfsamen/royal-queen-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
+          <img src="https://www.hanfgartenshop.de/media/wysiwyg/Marken/Royal-Queen-Seeds/Royal-queen-seeds-logo.jpg" alt="Royal Queen Seeds" loading="lazy">
+          <div class="brand-name">RQS</div>
+        </a>
+        <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/feminisierte-hanfsamen/greenhouse-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
+          <img src="https://www.sirius.nl/images/brand_page/2/green-house-seed-company.png" alt="Green House" loading="lazy">
+          <div class="brand-name">Green House</div>
+        </a>
+        <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/humboldt-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
+          <img src="https://lessorganix.de/cdn/shop/collections/HSO_logo_small_ce9e6a13-1cd5-4886-b7d1-07f9a23235bf.png?v=1743236482" alt="Humboldt" loading="lazy">
+          <div class="brand-name">Humboldt</div>
+        </a>
+        <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/fast-buds-seeds?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
+          <img src="https://bloomtech.de/media/image/manufacturer/181/lg/fastbuds.jpg" alt="Fast Buds" loading="lazy">
+          <div class="brand-name">Fast Buds</div>
+        </a>
+      </div>
+    </section>
 
-<footer class="footer">
-  <p>Made by <span class="sig">Rickyyy76</span></p>
-</footer>
-```
-
+    <footer class="footer">
+      <p>Made by <span class="sig">Rickyyy76</span></p>
+    </footer>
   </main>
 
   <script>
@@ -1012,7 +1010,6 @@ const products = [
 ];
 
 </script>
-
   <script>
     const grid = document.getElementById('product-grid');
     const countEl = document.getElementById('result-count');
@@ -1060,6 +1057,5 @@ const products = [
       renderProducts(filtered);
     }
   </script>
-
 </body>
 </html>
