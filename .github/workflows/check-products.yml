@@ -31,9 +31,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add products.txt
           if ! git diff --staged --quiet; then
-            git commit -m "🤖 Auto: Entferne nicht verfügbare Produkte"
+            git commit -m "🤖 Auto: Entferne nicht verfügbare Produkte aus products.txt"
             git push
           else
             echo "✓ Alle Produkte verfügbar, nichts zu tun"
