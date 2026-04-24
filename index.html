@@ -681,177 +681,13 @@ body {
   </main>
 
   <script>
-// Amsterdam Seed Center - Produktliste
-// Affiliate: CPrOZdqBHg
-const C = "https://www.amsterdamseedcenter.com/media/catalog/product";
-const B = "https://www.amsterdamseedcenter.com/en/";
-const A = "?affiliate_code=CPrOZdqBHg&referring_service=widget";
+// Amsterdam Seed Center Produkte
+// Wird bei Seitenaufruf aus products.txt geladen (Widget-HTML-Dump)
+// Zeigt 300 zufällig rotierte Produkte, wöchentlich automatisch aktualisiert
 
-const products = [
-  // ===== FEMINIZED (~120) =====
-  {cat:"fem",name:"Marmelade F3 – 5pack",price:"60,00 €",img:C+"/m/a/marmeladef3.jpeg",url:B+"marmelade-f3-fem-5-pack-le-mont-brumeux"+A},
-  {cat:"fem",name:"Feminized Mix – 10pack",price:"35,00 €",img:C+"/f/e/fem-mix-1.jpg",url:B+"feminized-mix-10-pack-monkey-genetics"+A},
-  {cat:"fem",name:"Fryday Boof – 5pack",price:"60,50 €",img:C+"/f/r/fryday-boof-600x800-1.jpg",url:B+"fryday-boof-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Strawberry Pop Rocks – 5pack",price:"61,50 €",img:C+"/s/t/strawberry-pop-rocks-600x800-1.jpg",url:B+"strawberry-pop-rocks-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Tiger Paw – 3pack",price:"50,00 €",img:C+"/t/i/tiger-paw-lemonnade-seeds.jpg",url:B+"tiger-paw-fem-3-pack-cookies-seedbank"+A},
-  {cat:"fem",name:"ACE Mix – 5pack",price:"21,00 €",img:C+"/a/c/acemix_2.jpg",url:B+"ace-mix-reg-5-pack-ace-seeds"+A},
-  {cat:"fem",name:"Exotic Biscotti – 5pack",price:"40,00 €",img:C+"/e/x/exotic-biscotti.png",url:B+"exotic-biscotti-fem-5-pack-exotic-seed"+A},
-  {cat:"fem",name:"Pink Pie – 6pack",price:"80,00 €",img:C+"/p/i/pink-pie-3.jpg",url:B+"pink-pie-fem-6-pack-karma-genetics"+A},
-  {cat:"fem",name:"Indigo Sapphire – 5pack",price:"59,00 €",img:C+"/i/n/indigo-sapphire-600x800-1.jpg",url:B+"indigo-sapphire-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Agent Murphy – 5pack",price:"35,00 €",img:C+"/n/a/narcos_agent_murphy.jpg",url:B+"agent-murphy-fem-5-pack-narcos-seeds"+A},
-  {cat:"fem",name:"Slurricane – 6pack",price:"60,00 €",img:C+"/a/r/archive-seed-bank-slurricane.jpg",url:B+"slurricane-fem-6-pack-archive-seedbank"+A},
-  {cat:"fem",name:"Coco Jambo – 5pack",price:"59,00 €",img:C+"/c/o/coco-jambo-600x800-1.jpg",url:B+"coco-jambo-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Insanity OG – 5pack",price:"49,50 €",img:C+"/i/n/insanity-og-5_1_.jpg",url:B+"insanity-og-fem-5-pack-pure-instinto"+A},
-  {cat:"fem",name:"Super Lemon Haze x GMO – 3pack",price:"47,00 €",img:C+"/s/u/super-lemon-haze-x-gmo.jpg",url:B+"super-lemon-haze-gmo-fem-3-pack-green-house"+A},
-  {cat:"fem",name:"Tropicana Cookies FF – 5pack",price:"55,00 €",img:C+"/t/r/tropicanna_cookies4.jpg",url:B+"tropicanna-cookies-fast-flowering-fem-5-pack-fast-buds"+A},
-  {cat:"fem",name:"Smashberry Fumez – 5pack",price:"60,00 €",img:C+"/s/m/smashberry-fumez-600x800-11.jpg",url:B+"smashberry-fumez-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Sour Betty – 5pack",price:"56,00 €",img:C+"/s/o/sour-betty-600x800-1.jpg",url:B+"sour-betty-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Zerbert Smoothie – 6pack",price:"80,00 €",img:C+"/z/e/zerbert-smoothie-cannabis-seeds-the-plug-seedbank.jpg",url:B+"zerbert-smoothie-fem-6-pack-the-plug-seedbank"+A},
-  {cat:"fem",name:"Frosty's Purple Freak – 6pack",price:"98,00 €",img:C+"/f/r/frostys-purple-freak-strain-before-harvest.jpg",url:B+"frostys-purple-freak-fem-5-pack-khalifa-genetics"+A},
-  {cat:"fem",name:"El Patron – 5pack",price:"49,50 €",img:C+"/e/l/el-patron.jpg",url:B+"el-patron-fem-5-pack-royal-queen-seeds"+A},
-  {cat:"fem",name:"Sticky Boof – 5pack",price:"61,50 €",img:C+"/s/t/sticky-boof-600x800-11.jpg",url:B+"sticky-boof-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Elementz – 5pack",price:"61,00 €",img:C+"/e/l/elementz-600x800-11.jpg",url:B+"elementz-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"RLX Runtz – 6pack",price:"70,00 €",img:C+"/c/r/cr-rollex-runtz-fem-6-pack-devils-harvest_1_.jpg",url:B+"rlx-runtz-fem-6-pack-devils-harvest"+A},
-  {cat:"fem",name:"Sun of a Peach – 5pack",price:"60,00 €",img:C+"/s/u/sun-of-a-peach-600x800-4.jpg",url:B+"sun-of-a-peach-fem-5-pack-anesia-seeds"+A},
-  {cat:"fem",name:"Cotton Candy Kush – 5pack",price:"42,00 €",img:C+"/c/o/cotton_candy_5.jpg",url:B+"cotton-candy-kush-fem-5-pack-delicious-seeds"+A},
-  {cat:"fem",name:"Crystal White Kush – 5pack",price:"74,00 €",img:C+"/c/r/crystal-white-kush.jpg",url:B+"crystal-white-kush-fem-5-pack-super-sativa-seed-club"+A},
-  {cat:"fem",name:"Pink Limez – 7pack",price:"99,00 €",img:C+"/p/i/pink-limez-female-weed-seed-grounded-genetics.jpg",url:B+"pink-limez-7-pack-fem-grounded-genetics"+A},
-  {cat:"fem",name:"Red Red Wine – 6pack",price:"66,00 €",img:C+"/r/e/red-red-wine-perfect-tree.jpg",url:B+"red-red-wine-fem-6-pack-perfect-tree"+A},
-  {cat:"fem",name:"Trop Cookies x Purple Punch – 5pack",price:"50,00 €",img:C+"/t/r/tropicana-cookies-x-purple-punch_17794_20230109170602499446_.jpg",url:B+"tropicana-cookies-purple-punch-fem-5-pack-tramuntana-seeds"+A},
-  {cat:"fem",name:"Starship – 5pack",price:"25,00 €",img:C+"/s/t/starship-2.jpg",url:B+"starship-5-pack-fem-christiania-seedbank"+A},
-  {cat:"fem",name:"Haze Queen – 5pack",price:"54,00 €",img:C+"/h/a/haze-queen-600x800-1.jpg",url:B+"haze-queen-5-pack-fem-anesia-seeds"+A},
-  {cat:"fem",name:"Sweet Mandarine Zkittlez FF – 5pack",price:"50,00 €",img:C+"/s/w/sweet-mandarine-zkittlez-f1-fast-version.jpg",url:B+"sweet-mandarine-zkittlez-fast-fem-5-pack-sweet-seeds"+A},
-  {cat:"fem",name:"Green Crack – 3pack",price:"31,00 €",img:C+"/g/r/greencrackcannabisseeds2.jpg",url:B+"green-crack-fem-blimburn"+A},
-  {cat:"fem",name:"Strawberry Tree – 5pack",price:"53,00 €",img:C+"/s/t/strawberry-tree-600x800-1.jpg",url:B+"strawberry-tree-5-pack-fem-anesia-seeds"+A},
-  {cat:"fem",name:"Apricot Oreoz – 5pack",price:"56,00 €",img:C+"/a/p/apricot-oreoz-600x800-1.jpg",url:B+"apricot-oreoz-5-pack-fem-anesia-seeds"+A},
-  {cat:"fem",name:"Nori Cake – 5pack",price:"55,00 €",img:C+"/g/h/ghsc-website-nori-cake-pic.-800_25ik-id.png",url:B+"nori-cake-5-pack-fem-green-house"+A},
-  {cat:"fem",name:"Caramelo – 5pack",price:"39,00 €",img:C+"/c/a/caramelo_6.jpg",url:B+"caramelo-5-pack-fem-delicious-seeds"+A},
-  {cat:"fem",name:"Frozen Black Cherry – 5pack",price:"61,50 €",img:C+"/f/r/frozen-black-cherry-600x800-1.jpg",url:B+"frozen-black-cherry-fem-anesia-seeds"+A},
-  {cat:"fem",name:"Gelato – 5pack",price:"45,00 €",img:C+"/_/_/__gelato_circle_new_21_703157.jpg",url:B+"gelato-5-pack-fem-barneys-farm"+A},
-  {cat:"fem",name:"Ice Cream Cake – 5pack",price:"53,00 €",img:C+"/i/c/ice-cream-cake_packet_large_seeds.jpg",url:B+"ice-cream-cake-5-pack-fem-barneys-farm"+A},
-  {cat:"fem",name:"Zoomiez – 3pack",price:"36,00 €",img:C+"/z/o/zoomiez-600x800-1.jpg",url:B+"zoomiez-fem-anesia-seeds"+A},
-  {cat:"fem",name:"Royal Runtz – 3pack",price:"25,00 €",img:C+"/r/o/royal-runtz.jpg",url:B+"royal-runtz-royal-queen-seeds"+A},
-  {cat:"fem",name:"Lemon Drizzle – 5pack",price:"53,00 €",img:C+"/_/_/__lemon-drizzle_circle_new_21_697418.jpg",url:B+"lemon-drizzle-5-pack-fem-barneys-farm"+A},
-  {cat:"fem",name:"Wedding Cheesecake – 5pack",price:"44,00 €",img:C+"/w/e/wedding-cake-xl-white-labe.png",url:B+"wedding-cheesecake-5-pack-fem-white-label"+A},
-  {cat:"fem",name:"CaliFunk – 5pack",price:"70,00 €",img:C+"/c/a/califunk-710-special-flower.jpg",url:B+"califunk-5-pack-fem-thseeds"+A},
-  {cat:"fem",name:"Original Blue Cheese – 6pack",price:"42,00 €",img:C+"/o/r/original-blue-cheese-weed-seeds-strains-the-original-big-buddha-family-farms.jpg",url:B+"original-blue-cheese-5-pack-fem-original-big-buddha-family-farms"+A},
-  {cat:"fem",name:"Enemy's Dream – 5pack",price:"40,00 €",img:C+"/e/n/enemys-dream-super-strains.jpg",url:B+"enemys-dream-5-pack-fem-super-strains"+A},
-  {cat:"fem",name:"GMO – 5pack",price:"42,00 €",img:C+"/g/m/gmo_circle_new_barneys-farm.jpg",url:B+"gmo-5-pack-fem-barneys-farm"+A},
-  {cat:"fem",name:"Afghan Kush – 10pack",price:"25,00 €",img:C+"/a/f/afghan-kush-xl.png",url:B+"afghan-kush-10-pack-reg-white-label"+A},
-  {cat:"fem",name:"80's Durban Poison – 12pack",price:"48,00 €",img:C+"/8/0/80s-durban-poison-landrace-3.jpg",url:B+"80s-durban-poison-12-pack-reg-khalifa-genetics"+A},
-  {cat:"fem",name:"Sensi Purple Kush – 5pack",price:"49,00 €",img:C+"/s/e/sensi-purple-kush-feminized-xl.jpg",url:B+"sensi-purple-kush-5-pack-fem-sensi-seeds"+A},
-  {cat:"fem",name:"Blue Skunk – 5pack",price:"34,50 €",img:C+"/b/l/blue-skunk-feminized-xl.jpg",url:B+"blue-skunk-5-pack-fem-sensi-seeds"+A},
-  {cat:"fem",name:"Blueberry – 5pack",price:"25,00 €",img:C+"/b/l/blueberry-kush.jpg",url:B+"blueberry-5-pack-fem-nirvana-seeds"+A},
-  {cat:"fem",name:"Pineapple Poison – 5pack",price:"49,00 €",img:C+"/p/i/pineapple-poison_1.jpg",url:B+"pineapple-poison-5-pack-fem-super-sativa-seed-club"+A},
-  {cat:"fem",name:"Wonder Woman – 5pack",price:"25,00 €",img:C+"/w/o/wonder-woman-feminized.jpg",url:B+"wonder-woman-5pack-feminized-nirvana-seeds"+A},
-  {cat:"fem",name:"Super OG Kush – 5pack",price:"29,00 €",img:C+"/s/u/super-og-kush-0.jpg",url:B+"super-og-kush-5-pack-fem-kannabia"+A},
-  {cat:"fem",name:"Cookies Gelato – 3pack",price:"30,50 €",img:C+"/c/o/cookies-gelato-fem.jpg",url:B+"cookies-gelato-3-pack-fem-royal-queen-seeds"+A},
-  {cat:"fem",name:"Pineapple Express – 5pack",price:"45,00 €",img:C+"/p/i/pineapple-express_circle_new_21_827345.jpg",url:B+"pineapple-express-fem-barneys-farm"+A},
-  {cat:"fem",name:"Lemongrass – 5pack",price:"36,50 €",img:C+"/a/m/amsterdam_genetics_lemongrass.jpg",url:B+"lemongrass-5-pack-fem-amsterdam-genetics"+A},
-  {cat:"fem",name:"Chunky Cookies – 5pack",price:"36,50 €",img:C+"/w/e/web_chunky_cookies_cannabis_plant_amsterdam_genetics.jpg",url:B+"chunky-cookies-5-pack-fem-amsterdam-genetics"+A},
-  {cat:"fem",name:"Banana Slush – 5pack",price:"36,50 €",img:C+"/a/m/amsterdam_genetics_banana_slush.jpg",url:B+"banana-slush-5-pack-fem-amsterdam-genetics"+A},
-  {cat:"fem",name:"Tangerine G13 – 5pack",price:"45,00 €",img:C+"/a/m/amsterdam_genetics_tangerine_g13.jpg",url:B+"tangerine-g13-fem-5-pack-amsterdam-genetics"+A},
-  {cat:"fem",name:"Ztrawberry – 5pack",price:"55,00 €",img:C+"/z/t/ztrawberry_ghsc.jpg",url:B+"ztrawberry-5-pack-fem-greenhouse"+A},
-  {cat:"fem",name:"Purple Haze x Malawi – 5pack",price:"65,00 €",img:C+"/p/u/purple_haze_malawi.jpg",url:B+"purple-haze-malawi-5-pack-fem-ace-seeds"+A},
-  {cat:"fem",name:"Eleven Roses – 5pack",price:"54,00 €",img:C+"/e/l/eleven-roses-web.jpg",url:B+"eleven-roses-5-pack-fem-delicious-seeds"+A},
-  {cat:"fem",name:"Lemon Ice – 5pack",price:"30,00 €",img:C+"/l/e/lemon-ice-grown-from-amsterdam-genetic-seeds-e1610352647778_2_.jpg",url:B+"lemon-ice-5-pack-fem-amsterdam-genetics"+A},
-  {cat:"fem",name:"Grapefruit Superstar – 5pack",price:"36,50 €",img:C+"/g/r/grapefruit_star_amsterdam_genetics.jpg",url:B+"grapefruit-superstar-5-pack-fem-amsterdam-genetics"+A},
-  {cat:"fem",name:"Critical Kush – 5pack",price:"32,50 €",img:C+"/c/r/critical-kush-fem.jpg",url:B+"critical-kush-5-pack-fem-royal-queen-seeds"+A},
-  {cat:"fem",name:"Lemon Storm – 5pack",price:"45,00 €",img:C+"/l/e/lemon-storm-2_1.jpg",url:B+"lemon-storm-5-pack-fem-pure-instinto"+A},
-  {cat:"fem",name:"Moroccan Beldia – 6pack",price:"39,50 €",img:C+"/m/o/moroccan-beldia-khalifa-geneticskopie.jpg",url:B+"moroccan-beldia-6-pack-fem-khalifa-genetics"+A},
-  {cat:"fem",name:"Afghan Lemon – 6pack",price:"72,50 €",img:C+"/a/f/afghan-lemon-khalifa-genetics.jpg",url:B+"afghan-lemon-6-pack-fem-khalifa-genetics"+A},
-  {cat:"fem",name:"Desert Skunk – 6pack",price:"72,50 €",img:C+"/d/e/desert-skunk-khalifa-genetics.jpg",url:B+"desert-skunk-6-pack-fem-khalifa-genetics"+A},
-  {cat:"fem",name:"Jetlag – 5pack",price:"60,00 €",img:C+"/j/e/jetlag-female-weed-seeds-the-plug-seedbank.jpeg",url:B+"jetlag-the-plug-5-fem"+A},
-  {cat:"fem",name:"Lemon Citron – 5pack",price:"52,50 €",img:C+"/l/e/lemon-citron-humboldt-seeds.jpeg",url:B+"lemon-citron-5fem-humboldt"+A},
-  {cat:"fem",name:"Banana Sapphire – 5pack",price:"61,00 €",img:C+"/b/a/bannana-sapphire-humboldt-seeds.jpeg",url:B+"banana-sapphire-5fem-humboldt"+A},
-  {cat:"fem",name:"Franco's Fullgas! – 5pack",price:"55,00 €",img:C+"/g/h/ghsc_fullgas__web.jpg",url:B+"fullgas-5-pack-fem-green-house"+A},
-  {cat:"fem",name:"Zai Zai – 6pack",price:"66,00 €",img:C+"/z/a/zai-zai-cannabis-weed-seed-perfect-tree-seeds_1.jpeg",url:B+"zai-zai-6pack-fem-perfect-tree"+A},
-  {cat:"fem",name:"Lemon Curd – 6pack",price:"66,00 €",img:C+"/l/e/lemon-curd-weed-seed-perfect-tree-seeds.jpeg",url:B+"lemon-curd-6pack-fem-perfect-tree"+A},
-  {cat:"fem",name:"Puff Mintz – 6pack",price:"66,00 €",img:C+"/p/u/puff-mints-jet-a-female-weed-seed-perfect-tree.jpeg",url:B+"puff-mintz-6pack-fem-perfect-tree"+A},
-  {cat:"fem",name:"Pink Gasoline – 6pack",price:"66,00 €",img:C+"/p/i/pink-gasoline-weed-seeds-perfect-tree-seeds.jpeg",url:B+"pink-gasoline-6pack-fem-perfect-tree"+A},
-  {cat:"fem",name:"Peach Sherbert OG – 6pack",price:"66,00 €",img:C+"/p/e/peach-sherbert-og-perfect-tree.jpeg",url:B+"peach-sherbert-og-6pack-fem-perfect-tree"+A},
-  {cat:"fem",name:"Wedding Cookies – 5pack",price:"32,00 €",img:C+"/w/e/wedding-cookies-original-sensible-seeds.jpeg",url:B+"wedding-cookies"+A},
-  {cat:"fem",name:"Lava Freeze – 5pack",price:"95,00 €",img:C+"/l/a/lava-freeze.png",url:B+"lava-freeze-5pack"+A},
-  {cat:"fem",name:"Bruntz – 6pack",price:"80,00 €",img:C+"/b/r/bruntz-seeds-the-plug-seedbank.jpeg",url:B+"bruntz-6-fem-the-plug"+A},
-  {cat:"fem",name:"Patrón – 6pack",price:"80,00 €",img:C+"/p/a/patron-seeds-by-the-plug-seedbank.jpeg",url:B+"patron-6-fem-the-plug"+A},
-  {cat:"fem",name:"Blue Dream – 6pack",price:"55,50 €",img:C+"/b/l/blue-dream-blimburn-seeds.jpeg",url:B+"blue-dream-6-fem-blimburn"+A},
-  {cat:"fem",name:"Wedding Cake – 5pack",price:"40,00 €",img:C+"/w/e/wedding-cake.png",url:B+"wedding-cake-pure-instinto-seeds"+A},
-  {cat:"fem",name:"Garlic Cookies – 5pack",price:"40,00 €",img:C+"/g/a/garlic_cookies.jpg",url:B+"garlic-cookies"+A},
-  {cat:"fem",name:"Cherry Cookies – 5pack",price:"40,00 €",img:C+"/c/h/cherry_cookies.png",url:B+"cherry-cookies"+A},
-  {cat:"fem",name:"Kalashnikov Original – 5pack",price:"34,00 €",img:C+"/k/a/kalashnikov-seeds-kalashnikov-original-feminized.jpg",url:B+"kalashnikov-original"+A},
-  {cat:"fem",name:"Black Lebanon Kush – 5pack",price:"59,00 €",img:C+"/b/l/black-lebanon-sssc_1.jpeg",url:B+"black-lebanon-kush"+A},
-  {cat:"fem",name:"Sour Glue – 5pack",price:"35,00 €",img:C+"/s/o/sour-glue-medical-seeds.jpeg",url:B+"sour-glue"+A},
-  {cat:"fem",name:"Kush Mintz – 5pack",price:"45,00 €",img:C+"/k/u/kush-mintz-main.jpg",url:B+"kush-mintz-seeds-barneys-farm"+A},
-  {cat:"fem",name:"Piñata – 7pack",price:"99,00 €",img:C+"/p/i/pinata-cannabis-weed-seed-grounded-genetics.jpeg",url:B+"pinata-7pack-feminized-grounded-genetics"+A},
-  {cat:"fem",name:"Vanilla Frosting – 5pack",price:"55,00 €",img:C+"/v/a/vanilla-frosting-anesia-seeds-amsterdam.jpeg",url:B+"vanilla-frosting"+A},
-  {cat:"fem",name:"Anesia Scout Cookies – 5pack",price:"54,00 €",img:C+"/a/n/anesia-scout-cookies-amsterdam.jpeg",url:B+"anesia-scout-cookies"+A},
-  {cat:"fem",name:"Chernobyl – 5pack",price:"90,00 €",img:C+"/c/h/chernobyl_subcool-seeds.jpeg",url:B+"chernobyl-subcool-feminized"+A},
-  {cat:"fem",name:"Jack The Ripper – 5pack",price:"90,00 €",img:C+"/s/u/subcool-seeds-jack-the-ripper-feminized.jpeg",url:B+"jack-the-ripper-feminized-subcool-seeds"+A},
-  {cat:"fem",name:"Tropical Fuel – 5pack",price:"50,00 €",img:C+"/t/r/tropical_fuel_exotic_seeds.png",url:B+"tropical-fuel"+A},
-  {cat:"fem",name:"London Mint Cake – 5pack",price:"65,00 €",img:C+"/l/o/london_mint_cake_thseeds.jpeg",url:B+"london-mint-cake"+A},
-  {cat:"fem",name:"AK-OG Kush – 5pack",price:"45,00 €",img:C+"/a/k/ak-og-kush_1.jpg",url:B+"ak-og-kush-5pack-fem-amsterdam-genetics"+A},
-  {cat:"fem",name:"M.O.B – 5pack",price:"65,00 €",img:C+"/t/_/t.h.seeds_-_mob-710-promo-advert.jpg",url:B+"mob-5pack-thseeds"+A},
-  {cat:"fem",name:"Gorilla Zkittlez – 5pack",price:"53,00 €",img:C+"/b/f/bf_gorilla_zkittlez.jpg",url:B+"gorilla-zkittlez-5pack-feminised-5pack-barneys-farm"+A},
-  {cat:"fem",name:"Blue Gelato 41 – 5pack",price:"52,50 €",img:C+"/b/f/bf_blue_gelato_41.jpg",url:B+"blue-gelato-41-5pack-barneys-feminised-farm"+A},
-  {cat:"fem",name:"Dos-si-dos 33 – 5pack",price:"53,00 €",img:C+"/d/o/dos-si-dos-33_circle_new_12_697693_1.jpg",url:B+"dos-si-dos-5-pack"+A},
-
-  // ===== AUTOFLOWER (~60) =====
-  {cat:"auto",name:"Frosty Freak Auto – 3pack",price:"55,00 €",img:C+"/f/r/frosty_auto_freak.jpg",url:B+"frosty-freak-auto-3-pack-khalifa-genetics-califrosty"+A},
-  {cat:"auto",name:"Santa Marta Haze Auto – 3pack",price:"26,00 €",img:C+"/s/a/santa-marta-haze-autoflower.jpg",url:B+"santa-marta-haze-auto-3-pack-seedstockers"+A},
-  {cat:"auto",name:"Big Bud Auto – 5pack",price:"40,00 €",img:C+"/o/r/original_bid_bud_auto.jpg",url:B+"big-bud-auto-5-pack-fast-buds"+A},
-  {cat:"auto",name:"Purple Haze Auto FB – 5pack",price:"55,00 €",img:C+"/l/_/l_tsp_purple_haze_auto_transparent_1739975390.jpg",url:B+"purple-haze-auto-5-pack-fast-buds"+A},
-  {cat:"auto",name:"Grape Pop Rocks Auto – 5pack",price:"48,50 €",img:C+"/g/r/grape-pop-rocks-auto-600x800-1.jpg",url:B+"grape-pop-rocks-auto-5-pack-anesia-seeds"+A},
-  {cat:"auto",name:"Pink Rozay x Strawberry Banana Auto – 5pack",price:"31,00 €",img:C+"/p/i/pink-rozay-x-strawberry-banana-auto-strain.jpg",url:B+"pink-rozay-strawberry-banana-auto-5-pack-original-sensible-seeds"+A},
-  {cat:"auto",name:"Frosted Guava Auto – 5pack",price:"29,00 €",img:C+"/f/r/frosted_guava_auto_original_sensible_seeds.png",url:B+"frosted-guava-auto-5-pack-original-sensible-seeds"+A},
-  {cat:"auto",name:"Blueberry Kush Autoflower – 5pack",price:"25,00 €",img:C+"/b/l/blueberry-kush-autoflower-marijuana-seeds.jpg",url:B+"blueberry-kush-autoflower-5-pack-nirvana-seeds"+A},
-  {cat:"auto",name:"AK-48 Autoflower",price:"25,00 €",img:C+"/a/k/ak-48-autoflower-marijuana-seeds.jpg",url:B+"ak-48-autoflower-nirvana-seeds"+A},
-  {cat:"auto",name:"NYC Sour D Auto Tyson – 5pack",price:"35,00 €",img:C+"/n/y/nyc-sour-d-automatic.jpg",url:B+"nyc-sour-d-auto-tyson-5-pack-royal-queen-seeds"+A},
-  {cat:"auto",name:"GOAT'lato Auto Tyson – 5pack",price:"42,50 €",img:C+"/g/o/goatlato-automatic.jpg",url:B+"goatlato-auto-tyson-5-pack-royal-queen-seeds"+A},
-  {cat:"auto",name:"Cookies Kush Auto – 5pack",price:"42,00 €",img:C+"/_/_/__cookies-kush-auto_circle_new_21_765227.jpg",url:B+"cookies-kush-auto-5-pack-barneys-farm"+A},
-  {cat:"auto",name:"Sour Diesel Auto – 5pack",price:"55,00 €",img:C+"/_/_/__sour-diesel-auto_circle_new_21_421731.jpg",url:B+"sour-diesel-auto-5-pack-barneys-farm"+A},
-  {cat:"auto",name:"Auto Blue Cheese – 6pack",price:"44,00 €",img:C+"/a/u/auto_blue_cheese_638a2b5d03bb5.jpg",url:B+"auto-blue-cheese-6-pack-original-big-buddha-family-farms"+A},
-  {cat:"auto",name:"Auto MK Ultra – 5pack",price:"45,00 €",img:C+"/a/u/auto-mk-ultra.jpg",url:B+"auto-mk-ultra-5-pack-thseeds"+A},
-  {cat:"auto",name:"Gorilla Auto – 5pack",price:"55,00 €",img:C+"/g/o/gorilla_1.jpg",url:B+"gorilla-auto-5-pack-fast-buds"+A},
-  {cat:"auto",name:"Original Cinderella Auto – 5pack",price:"40,00 €",img:C+"/c/i/cinderella_auto_fast_buds.jpg",url:B+"original-cinderella-auto-5-pack-fast-buds"+A},
-  {cat:"auto",name:"Auto French Cookies – 6pack",price:"60,00 €",img:C+"/a/u/auto-french-cookies-flower.jpg",url:B+"auto-french-cookies-6-pack-thseeds"+A},
-  {cat:"auto",name:"Auto Sour Ripper – 5pack",price:"35,00 €",img:C+"/s/o/sour-ripper-auto-feminized-cannabis-seeds.jpg",url:B+"auto-sour-ripper-5-pack-ripper-seeds"+A},
-  {cat:"auto",name:"Auto Zombie Kush – 5pack",price:"45,00 €",img:C+"/z/o/zombie-kush-auto-feminized-cannabis-seeds.jpg",url:B+"auto-zombie-kush-5-pack-ripper-seeds"+A},
-  {cat:"auto",name:"OG Kush Auto – 5pack",price:"42,00 €",img:C+"/_/_/__og-kush-auto_barneys_farm.jpg",url:B+"og-kush-auto-5-pack-fem-barneys-farm"+A},
-  {cat:"auto",name:"GMO Auto – 5pack",price:"42,00 €",img:C+"/_/_/__gmo-auto_circle_barneys-farm.jpg",url:B+"gmo-auto-5-pack-fem-barneys-farm"+A},
-  {cat:"auto",name:"Epsilon F1 Auto – 3pack",price:"38,00 €",img:C+"/f/1/f1hybrids-epsilon.jpg",url:B+"epsilon-f1-auto-royal-queen-seeds"+A},
-  {cat:"auto",name:"Medusa F1 Auto – 3pack",price:"40,00 €",img:C+"/f/1/f1hybrids-medusa.jpg",url:B+"medusa-f1-auto-3-pack-royal-queen-seeds"+A},
-  {cat:"auto",name:"Do-Si-Dos Auto – 3pack",price:"27,00 €",img:C+"/a/u/auto-do-si-dos.jpg",url:B+"do-si-dos-automatic-3-pack-royal-queen-seeds"+A},
-  {cat:"auto",name:"Strawberry Gorilla Auto – 5pack",price:"55,00 €",img:C+"/s/t/strawberry-gorilla-fast-buds1.jpg",url:B+"strawberry-gorilla-auto-5-pack-fast-buds"+A},
-  {cat:"auto",name:"Sugar Black Rose Auto – 5pack",price:"46,00 €",img:C+"/s/u/sugar_black_rose_auto_2.jpg",url:B+"sugar-black-rose-auto-5-pack-delicious-seeds"+A},
-  {cat:"auto",name:"Lemon Haze Auto – 5pack",price:"38,00 €",img:C+"/l/e/lemon-haze-auto-0.jpg",url:B+"lemon-haze-auto-5-pack-kannabia"+A},
-  {cat:"auto",name:"Clementine Cream Auto – 5pack",price:"35,00 €",img:C+"/c/r/cream-mandarine-5.jpg",url:B+"clementine-cream-autoflower-5-pack-pure-instinto"+A},
-  {cat:"auto",name:"Cherry Cola Auto – 5pack",price:"55,00 €",img:C+"/3/7/373565f4262e8f19e41ece2d6d65ccfe.jpg",url:B+"cherry-cola-auto-5-pack-fast-buds"+A},
-  {cat:"auto",name:"La Diva Auto – 5pack",price:"30,00 €",img:C+"/l/a/la_diva_5.jpg",url:B+"la-diva-auto-5-pack-delicious-seeds"+A},
-  {cat:"auto",name:"La Bella Afrodita Auto – 5pack",price:"36,00 €",img:C+"/b/e/bella_afrodita_6.jpg",url:B+"la-bella-afrodita-auto-5-pack-delicious-seeds"+A},
-  {cat:"auto",name:"Mimosa x Orange Punch Auto – 5pack",price:"53,00 €",img:C+"/m/i/mimosa-x-orange-punch-auto_barneys-farm.jpg",url:B+"mimosa-orange-punch-auto-5-pack-barneys-farm"+A},
-  {cat:"auto",name:"Cheese Auto – 5pack",price:"42,00 €",img:C+"/c/h/cheese-auto-barneys-farm.jpg",url:B+"cheese-auto-5-pack-barneys-farm"+A},
-  {cat:"auto",name:"Tropicanna Poison XL Auto – 5pack",price:"46,00 €",img:C+"/t/r/tropicanna-poison-xl-auto.jpg",url:B+"tropicanna-poison-xl-auto-5-pack-sweet-seeds"+A},
-  {cat:"auto",name:"Bruce Banner Auto – 5pack",price:"55,00 €",img:C+"/b/r/bruce_banner.jpg",url:B+"bruce-banner-auto-5-pack-fast-buds"+A},
-  {cat:"auto",name:"White Widow Auto",price:"34,00 €",img:C+"/w/h/whitewidow_auto.jpg",url:B+"white-widow-auto"+A},
-  {cat:"auto",name:"Super Skunk Auto – 3pack",price:"22,00 €",img:C+"/s/u/super-skunk-automatic-xl_1_.png",url:B+"super-skunk-automatic"+A},
-  {cat:"auto",name:"Green Crack Auto – 5pack",price:"45,00 €",img:C+"/g/r/green_crack.jpg",url:B+"green-crack-5pack-auto-fast-bud-seeds"+A},
-  {cat:"auto",name:"Super Bud Auto – 5pack",price:"32,00 €",img:C+"/s/u/superbudauto.jpg",url:B+"super-bud-autoflowering-green-house"+A},
-
-  // ===== ZUBEHÖR & CBD (~20) =====
-  {cat:"access",name:"ASC Rolling Papers",price:"2,50 €",img:C+"/v/l/vloei1.jpg",url:B+"asc-rolling-papers"+A},
-  {cat:"access",name:"CBD Capsules 60x25mg",price:"34,95 €",img:C+"/c/b/cbd-gel-capsules-25mg-vegan-1000x1000.jpg",url:B+"dutch-natural-healing-cbd-capsules-60x25mg"+A},
-  {cat:"access",name:"Hemp CBD Oil 15% – 10ml",price:"45,95 €",img:C+"/t/r/trinacria-hemp-cbd-oil-mct-15-scatolino-1.jpg",url:B+"trinacrina-hemp-cbd-oil-15-percent-10ml"+A},
-  {cat:"access",name:"CBD Strawberry Apple Tea – 20x",price:"21,95 €",img:C+"/s/t/stawberry-apple-cbd-green-tea-1000x1000.jpg",url:B+"cbd-strawberry-apple-green-tea-20bags-5mg"+A},
-  {cat:"access",name:"CBG Oil 10% – 10ml",price:"34,95 €",img:C+"/c/b/cbg-oil-full-spectrum-10-570x570.jpg",url:B+"dutch-hemp-cbg-oil-10-10ml"+A},
-  {cat:"access",name:"CBD Oil 40% – 10ml",price:"89,95 €",img:C+"/c/b/cbd-oil-full-spectrum-40.jpg",url:B+"dutch-hemp-cbd-oil-40-percent-10ml"+A},
-  {cat:"access",name:"CBD Softgels 25mg",price:"39,95 €",img:C+"/0/1/01_1_.jpg",url:B+"cbd-softgels-full-spectrum-25mg-dutch-hemp"+A},
-  {cat:"access",name:"CBD Melatonin Night Gummies",price:"29,95 €",img:C+"/c/b/cbd_nacht_gummies_01.jpeg",url:B+"hemplife-cbd-melatonine-nacht-gummies-200gr"+A},
-  {cat:"access",name:"CBD Gold Oil 25% – 10ml",price:"79,95 €",img:C+"/d/u/dutch_natural_healing_cbd_oil_25.jpg",url:B+"dutch-natural-healing-25-full-spectrum-cbd-oil"+A},
-  {cat:"access",name:"Airvape XS GO Vaporizer",price:"69,00 €",img:C+"/a/i/airvape-xs-go-vaporizer.jpeg",url:B+"airvape-xs-go-portable-vaporizer"+A},
-  {cat:"access",name:"Boundless CFC 2.0 Vaporizer",price:"78,90 €",img:C+"/c/f/cfc2.0.jpg",url:B+"boundless-cfc20-vaporizer"+A},
-  {cat:"access",name:"Pax Mini Charger",price:"24,50 €",img:C+"/p/a/pax2-minicharger_1.jpg",url:B+"pax-mini-charger"+A},
-  {cat:"access",name:"Cannalator Extractor",price:"127,50 €",img:C+"/s/t/staticthumbnail.jpg",url:B+"cannolator-extractor"+A}
-];
+let products = [];
+let allProducts = [];
+const DISPLAY_COUNT = 300;
 
 </script>
   <script>
@@ -876,7 +712,98 @@ const products = [
       }
       countEl.textContent = list.length + ' Produkt' + (list.length === 1 ? '' : 'e');
     }
-    renderProducts(products);
+    // Load products from products.txt (widget HTML dump)
+    async function loadProducts() {
+      try {
+        const res = await fetch('products.txt?v=' + Date.now());
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const txt = await res.text();
+        allProducts = parseWidgetHTML(txt);
+        // Shuffle and limit for rotation on each page load
+        products = shuffle(allProducts).slice(0, DISPLAY_COUNT);
+        renderProducts(products);
+      } catch (e) {
+        console.error('Could not load products.txt:', e);
+        grid.innerHTML = '<div style="color:var(--text-dim);padding:2rem;text-align:center;grid-column:1/-1">⚠️ Produkte konnten nicht geladen werden</div>';
+        countEl.textContent = '';
+      }
+    }
+
+    // Parse Amsterdam Seed Center widget HTML → array of product objects
+    function parseWidgetHTML(html) {
+      const out = [];
+      // Split on <div class="widget-product" boundaries
+      const blocks = html.split(/<div class="widget-product"/).slice(1);
+      const BASE_IMG_PREFIX = 'https://www.amsterdamseedcenter.com/media/catalog/product/cache/d86bbfbd582716bb024908821fc76cb2';
+      const BASE_URL = 'https://www.amsterdamseedcenter.com/en/';
+      const PLACEHOLDER_FRAG = 'images/product/placeholder';
+
+      for (const block of blocks) {
+        // Extract href
+        const hrefMatch = block.match(/href="([^"]+)"/);
+        if (!hrefMatch) continue;
+        const fullUrl = hrefMatch[1];
+
+        // Extract image src
+        const imgMatch = block.match(/<img src="([^"]+)"/);
+        if (!imgMatch) continue;
+        let imgUrl = imgMatch[1];
+
+        // Skip placeholder images
+        if (imgUrl.includes(PLACEHOLDER_FRAG)) continue;
+
+        // Strip cache prefix for cleaner HD images
+        if (imgUrl.startsWith(BASE_IMG_PREFIX)) {
+          imgUrl = imgUrl.substring(BASE_IMG_PREFIX.length);
+          imgUrl = 'https://www.amsterdamseedcenter.com/media/catalog/product' + imgUrl;
+        }
+
+        // Extract name
+        const nameMatch = block.match(/<div class="product-name">([^<]+)<\/div>/);
+        if (!nameMatch) continue;
+        let name = nameMatch[1].trim();
+
+        // Clean name: "Product - 5-pack" → "Product – 5pack"
+        name = name.replace(/\s*-\s*(\d+)-pack/gi, ' – $1pack');
+        name = name.replace(/\s*-\s*(\d+)PACK/gi, ' – $1pack');
+
+        // Extract price
+        const priceMatch = block.match(/<div class="product-price">€([\d.]+)<\/div>/);
+        if (!priceMatch) continue;
+        const priceNum = parseFloat(priceMatch[1]);
+        if (priceNum === 0) continue; // skip free products
+        const price = priceNum.toFixed(2).replace('.', ',') + ' €';
+
+        // Categorize
+        let cat = 'fem';
+        if (/\b(cbd|cbg|cbn|oil|gummies|softgels|capsules|powder|vaporizer|microscope|grinder|rolling papers|cannalator|pax|tea|patches|tshirt|t-shirt)\b/i.test(name)) {
+          cat = 'access';
+        } else if (/\b(auto|automatic|autoflower)\b/i.test(name)) {
+          cat = 'auto';
+        }
+
+        out.push({
+          cat,
+          name,
+          price,
+          img: imgUrl,
+          url: fullUrl
+        });
+      }
+      return out;
+    }
+
+    // Fisher-Yates shuffle
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    loadProducts();
 
     let activeFilter = 'all';
     document.querySelectorAll('.pill').forEach(btn => {
@@ -893,12 +820,16 @@ const products = [
 
     function applyFilters() {
       const q = searchInput.value.toLowerCase().trim();
-      const filtered = products.filter(p => {
+      // If user is searching or filtering a category, search across ALL products
+      // Otherwise show the shuffled 300 as usual
+      const pool = (q || activeFilter !== 'all') ? allProducts : products;
+      const filtered = pool.filter(p => {
         const catOk = activeFilter === 'all' || p.cat === activeFilter;
         const qOk = !q || p.name.toLowerCase().includes(q);
         return catOk && qOk;
       });
-      renderProducts(filtered);
+      // Cap at DISPLAY_COUNT for any view
+      renderProducts(filtered.slice(0, DISPLAY_COUNT));
     }
   </script>
 </body>
