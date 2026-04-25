@@ -90,6 +90,7 @@ body {
 .profile {
   text-align: center;
   margin-bottom: 40px;
+  position: relative;
 }
 
 .avatar-ring {
@@ -389,6 +390,276 @@ body {
   padding: 0 4px;
 }
 
+
+/* === LANGUAGE TOGGLE === */
+.lang-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.lang-toggle button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 6px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.lang-toggle button.active {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.lang-toggle button:not(.active):hover { color: var(--text); }
+
+/* === CRYPTO PRICE TICKER === */
+.crypto-ticker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.crypto-ticker-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s var(--ease);
+}
+
+.crypto-ticker-card:hover { border-color: var(--border-strong); }
+
+.crypto-ticker-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--coin-glow, transparent);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.crypto-ticker-card[data-coin="solana"] { --coin-glow: linear-gradient(135deg, #9945ff, #14f195); }
+.crypto-ticker-card[data-coin="bitcoin"] { --coin-glow: linear-gradient(135deg, #f7931a, #ffae34); }
+.crypto-ticker-card[data-coin="ethereum"] { --coin-glow: linear-gradient(135deg, #627eea, #8a96eb); }
+
+.crypto-ticker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.crypto-ticker-symbol { display: flex; align-items: center; gap: 5px; }
+
+.crypto-ticker-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.crypto-ticker-icon[data-coin="solana"] { background: linear-gradient(135deg, #9945ff, #14f195); }
+.crypto-ticker-icon[data-coin="bitcoin"] { background: #f7931a; }
+.crypto-ticker-icon[data-coin="ethereum"] { background: #627eea; }
+
+.crypto-ticker-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.crypto-ticker-change {
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.crypto-ticker-change.positive { color: #4ade80; }
+.crypto-ticker-change.negative { color: #ef4444; }
+.crypto-ticker-change.neutral { color: var(--text-muted); }
+
+.crypto-ticker-card.loading .crypto-ticker-price,
+.crypto-ticker-card.loading .crypto-ticker-change {
+  opacity: 0.4;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* === ADVANCED FILTERS === */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.filter-bar .pill-row { flex: 1; min-width: 0; }
+
+.filter-toggle-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  position: relative;
+}
+
+.filter-toggle-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.filter-toggle-btn.has-active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-toggle-btn .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.filter-toggle-btn .badge:empty { display: none; }
+
+.adv-filters {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s var(--ease);
+  margin-top: 0;
+}
+
+.adv-filters.open {
+  grid-template-rows: 1fr;
+  margin-top: 12px;
+}
+
+.adv-filters-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.adv-filters-inner > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adv-group { display: flex; flex-direction: column; gap: 6px; }
+
+.adv-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.adv-options {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.adv-chip {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.18s var(--ease);
+}
+
+.adv-chip:hover { border-color: var(--border-strong); color: var(--text); }
+
+.adv-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.adv-reset {
+  align-self: flex-start;
+  margin-top: 2px;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 4px 0;
+}
+
+.adv-reset:hover { color: var(--text); }
+
+@media (max-width: 380px) {
+  .crypto-ticker { gap: 6px; }
+  .crypto-ticker-card { padding: 9px 10px; }
+  .crypto-ticker-price { font-size: 0.88rem; }
+}
+
+
 /* === PRODUKT-GRID === */
 .product-grid {
   display: grid;
@@ -560,12 +831,16 @@ body {
   <main class="page">
 
     <header class="profile">
+      <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="de" class="active" aria-label="Deutsch">DE</button>
+        <button type="button" data-lang="en" aria-label="English">EN</button>
+      </div>
       <div class="avatar-ring">
         <img src="photo_2025-04-13_19-18-22.jpg" alt="Rickyyy" class="avatar" loading="eager">
         <span class="avatar-status" aria-hidden="true"></span>
       </div>
       <h1 class="username">Rickyyy<span class="suffix">76</span></h1>
-      <p class="bio">🌿 Cannabis Patient · 💰 Crypto Degen · 🎮</p>
+      <p class="bio" data-i18n="bio">🌿 Cannabis Patient · 💰 Crypto Degen · 🎮</p>
       <div class="socials">
         <a href="https://www.instagram.com/ricky.7six" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -578,42 +853,65 @@ body {
     </header>
 
     <section class="section">
-      <div class="section-head"><h2 class="section-title">Cannabis Patient</h2></div>
+      <div class="section-head"><h2 class="section-title" data-i18n="cannabis.title">Cannabis Patient</h2></div>
       <a href="https://bloomwell.de/de/registrierung?referral_code=t0OfsiJ8" class="card card--green" target="_blank" rel="noopener noreferrer">
         <span class="card-icon">🌿</span>
-        <span class="card-body"><span class="card-title">Bloomwell</span><span class="card-sub">Jetzt als Patient registrieren</span></span>
+        <span class="card-body"><span class="card-title">Bloomwell</span><span class="card-sub" data-i18n="bloomwell.sub">Jetzt als Patient registrieren</span></span>
         <span class="card-arrow" aria-hidden="true">→</span>
       </a>
     </section>
 
     <section class="section">
-      <div class="section-head"><h2 class="section-title">Crypto · Trading</h2></div>
+      <div class="section-head"><h2 class="section-title" data-i18n="crypto.title">Crypto · Trading</h2></div>
+      <div class="crypto-ticker" id="crypto-ticker" aria-live="polite">
+        <div class="crypto-ticker-card loading" data-coin="solana">
+          <div class="crypto-ticker-head">
+            <span class="crypto-ticker-symbol"><span class="crypto-ticker-icon" data-coin="solana"></span>SOL</span>
+          </div>
+          <div class="crypto-ticker-price">—</div>
+          <div class="crypto-ticker-change neutral">—</div>
+        </div>
+        <div class="crypto-ticker-card loading" data-coin="bitcoin">
+          <div class="crypto-ticker-head">
+            <span class="crypto-ticker-symbol"><span class="crypto-ticker-icon" data-coin="bitcoin"></span>BTC</span>
+          </div>
+          <div class="crypto-ticker-price">—</div>
+          <div class="crypto-ticker-change neutral">—</div>
+        </div>
+        <div class="crypto-ticker-card loading" data-coin="ethereum">
+          <div class="crypto-ticker-head">
+            <span class="crypto-ticker-symbol"><span class="crypto-ticker-icon" data-coin="ethereum"></span>ETH</span>
+          </div>
+          <div class="crypto-ticker-price">—</div>
+          <div class="crypto-ticker-change neutral">—</div>
+        </div>
+      </div>
       <a href="https://axiom.trade/@r6cky" class="card card--purple" target="_blank" rel="noopener noreferrer">
         <span class="card-icon">⚡</span>
-        <span class="card-body"><span class="card-title">Axiom Trading</span><span class="card-sub">Solana Trading Platform</span></span>
+        <span class="card-body"><span class="card-title">Axiom Trading</span><span class="card-sub" data-i18n="axiom.sub">Solana Trading Platform</span></span>
         <span class="card-arrow" aria-hidden="true">→</span>
       </a>
       <a href="https://claimyoursol.com/Q1etEf6yhhwrpzD2WfLU" class="card card--purple" target="_blank" rel="noopener noreferrer">
         <span class="card-icon">💎</span>
-        <span class="card-body"><span class="card-title">Solana Reclaim</span><span class="card-sub">SOL zurückholen</span></span>
+        <span class="card-body"><span class="card-title">Solana Reclaim</span><span class="card-sub" data-i18n="solanaReclaim.sub">SOL zurückholen</span></span>
         <span class="card-arrow" aria-hidden="true">→</span>
       </a>
       <a href="https://gmgn.ai/?ref=JfV" class="card card--purple" target="_blank" rel="noopener noreferrer">
         <span class="card-icon">📈</span>
-        <span class="card-body"><span class="card-title">GMGN</span><span class="card-sub">Memecoin Tracker</span></span>
+        <span class="card-body"><span class="card-title">GMGN</span><span class="card-sub" data-i18n="gmgn.sub">Memecoin Tracker</span></span>
         <span class="card-arrow" aria-hidden="true">→</span>
       </a>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2 class="section-title">Amsterdam Seed Center</h2>
+        <h2 class="section-title" data-i18n="asc.title">Amsterdam Seed Center</h2>
         <span class="section-tag">Shop</span>
       </div>
 
       <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/en/?affiliate_code=CPrOZdqBHg&amp;referring_service=banner&amp;element_id=4" class="card card--green">
         <span class="card-icon">🌱</span>
-        <span class="card-body"><span class="card-title">Zum ASC Shop</span><span class="card-sub">Seeds · Strains · Zubehör</span></span>
+        <span class="card-body"><span class="card-title" data-i18n="asc.shopTitle">Zum ASC Shop</span><span class="card-sub" data-i18n="asc.shopSub">Seeds · Strains · Zubehör</span></span>
         <span class="card-arrow" aria-hidden="true">→</span>
       </a>
 
@@ -623,13 +921,57 @@ body {
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="search" id="product-search" class="search-input" placeholder="Strain oder Produkt suchen..." aria-label="Produkte suchen">
+          <input type="search" id="product-search" class="search-input" placeholder="Strain oder Produkt suchen..." data-i18n-placeholder="search.placeholder" aria-label="Produkte suchen" data-i18n-aria="search.aria">
         </div>
-        <div class="pill-row">
-          <button class="pill active" data-filter="all">Alle</button>
-          <button class="pill" data-filter="fem">🌸 Feminized</button>
-          <button class="pill" data-filter="auto">⚡ Autoflower</button>
-          <button class="pill" data-filter="access">🧪 Zubehör & CBD</button>
+        <div class="filter-bar">
+          <div class="pill-row" id="cat-pills">
+            <button class="pill active" data-filter="all" data-i18n="filter.all">Alle</button>
+            <button class="pill" data-filter="fem"><span aria-hidden="true">🌸</span> <span data-i18n="filter.fem">Feminized</span></button>
+            <button class="pill" data-filter="auto"><span aria-hidden="true">⚡</span> <span data-i18n="filter.auto">Autoflower</span></button>
+            <button class="pill" data-filter="access"><span aria-hidden="true">🧪</span> <span data-i18n="filter.access">Zubehör & CBD</span></button>
+          </div>
+          <button class="filter-toggle-btn" id="adv-filter-toggle" type="button" aria-expanded="false" aria-controls="adv-filters">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="6" x2="14" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="10" y2="18"/>
+              <circle cx="17" cy="6" r="2"/><circle cx="13" cy="18" r="2"/>
+            </svg>
+            <span data-i18n="filter.more">Filter</span>
+            <span class="badge" id="adv-badge"></span>
+          </button>
+        </div>
+        <div class="adv-filters" id="adv-filters">
+          <div class="adv-filters-inner"><div>
+            <div class="adv-group">
+              <span class="adv-label" data-i18n="filter.price">Preis</span>
+              <div class="adv-options" data-group="price">
+                <button class="adv-chip active" type="button" data-val="all" data-i18n="filter.price.all">Alle</button>
+                <button class="adv-chip" type="button" data-val="0-30">0–30 €</button>
+                <button class="adv-chip" type="button" data-val="30-60">30–60 €</button>
+                <button class="adv-chip" type="button" data-val="60+">60+ €</button>
+              </div>
+            </div>
+            <div class="adv-group">
+              <span class="adv-label" data-i18n="filter.pack">Pack-Size</span>
+              <div class="adv-options" data-group="pack">
+                <button class="adv-chip active" type="button" data-val="all" data-i18n="filter.pack.all">Alle</button>
+                <button class="adv-chip" type="button" data-val="3">3pack</button>
+                <button class="adv-chip" type="button" data-val="5">5pack</button>
+                <button class="adv-chip" type="button" data-val="6">6pack</button>
+                <button class="adv-chip" type="button" data-val="10">10pack</button>
+                <button class="adv-chip" type="button" data-val="other" data-i18n="filter.pack.other">Andere</button>
+              </div>
+            </div>
+            <div class="adv-group">
+              <span class="adv-label" data-i18n="filter.sort">Sortierung</span>
+              <div class="adv-options" data-group="sort">
+                <button class="adv-chip active" type="button" data-val="random" data-i18n="filter.sort.random">Zufall</button>
+                <button class="adv-chip" type="button" data-val="price-asc" data-i18n="filter.sort.priceAsc">Preis ↑</button>
+                <button class="adv-chip" type="button" data-val="price-desc" data-i18n="filter.sort.priceDesc">Preis ↓</button>
+                <button class="adv-chip" type="button" data-val="name" data-i18n="filter.sort.name">A–Z</button>
+              </div>
+            </div>
+            <button class="adv-reset" id="adv-reset" type="button" data-i18n="filter.reset">Filter zurücksetzen</button>
+          </div></div>
         </div>
         <div class="result-count" id="result-count"></div>
       </div>
@@ -637,12 +979,12 @@ body {
       <div class="product-grid" id="product-grid"></div>
       <div class="empty-state" id="empty-state" hidden>
         <span>🕵️</span>
-        <p>Nichts gefunden. Probier einen anderen Suchbegriff.</p>
+        <p data-i18n="empty.text">Nichts gefunden. Probier einen anderen Suchbegriff.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-head"><h2 class="section-title">Top Seed Banks</h2></div>
+      <div class="section-head"><h2 class="section-title" data-i18n="brands.title">Top Seed Banks</h2></div>
       <div class="brand-grid">
         <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.amsterdamseedcenter.com/de/hanfsamen/barneys-farm?affiliate_code=CPrOZdqBHg&amp;referring_service=link" class="brand-card">
           <img src="https://cannapio-com.s23.cdn-upgates.com/_cache/c/7/c7fba55d598bbe4f57a2f70ab06a2b44-barneys-farm-cannabis-seeds-cannapio.jpeg" alt="Barney's Farm" loading="lazy">
@@ -710,7 +1052,7 @@ const DISPLAY_COUNT = 300;
             </div>
           </a>`).join('');
       }
-      countEl.textContent = list.length + ' Produkt' + (list.length === 1 ? '' : 'e');
+      countEl.textContent = (window.__t ? window.__t('count', { n: list.length }) : list.length + ' Produkte'); window.__lastCount = list.length;
     }
     // Load products from products.txt (widget HTML dump)
     async function loadProducts() {
@@ -818,19 +1160,275 @@ const DISPLAY_COUNT = 300;
     const searchInput = document.getElementById('product-search');
     searchInput.addEventListener('input', applyFilters);
 
+    // Advanced filter state
+    let advFilters = { price: 'all', pack: 'all', sort: 'random' };
+
+    function priceToNumber(priceStr) {
+      // "60,00 €" -> 60.0
+      const m = priceStr.match(/([\d,]+)/);
+      if (!m) return 0;
+      return parseFloat(m[1].replace(',', '.'));
+    }
+
+    function packFromName(name) {
+      // Match "5pack" or "5-pack" → 5; default "other"
+      const m = name.match(/(\d+)\s*[-–]?\s*pack/i);
+      return m ? parseInt(m[1], 10) : null;
+    }
+
     function applyFilters() {
       const q = searchInput.value.toLowerCase().trim();
-      // If user is searching or filtering a category, search across ALL products
-      // Otherwise show the shuffled 300 as usual
-      const pool = (q || activeFilter !== 'all') ? allProducts : products;
-      const filtered = pool.filter(p => {
+      // If user is searching/filtering, search across ALL products; else use shuffled set
+      const usingFullPool = q || activeFilter !== 'all'
+                          || advFilters.price !== 'all'
+                          || advFilters.pack !== 'all'
+                          || advFilters.sort !== 'random';
+      const pool = usingFullPool ? allProducts : products;
+      let filtered = pool.filter(p => {
         const catOk = activeFilter === 'all' || p.cat === activeFilter;
         const qOk = !q || p.name.toLowerCase().includes(q);
-        return catOk && qOk;
+        // Price filter
+        let priceOk = true;
+        if (advFilters.price !== 'all') {
+          const pr = priceToNumber(p.price);
+          if (advFilters.price === '0-30') priceOk = pr <= 30;
+          else if (advFilters.price === '30-60') priceOk = pr > 30 && pr <= 60;
+          else if (advFilters.price === '60+') priceOk = pr > 60;
+        }
+        // Pack filter
+        let packOk = true;
+        if (advFilters.pack !== 'all') {
+          const pk = packFromName(p.name);
+          if (advFilters.pack === 'other') packOk = pk === null;
+          else packOk = pk === parseInt(advFilters.pack, 10);
+        }
+        return catOk && qOk && priceOk && packOk;
       });
-      // Cap at DISPLAY_COUNT for any view
+      // Sort
+      if (advFilters.sort === 'price-asc') {
+        filtered.sort((a, b) => priceToNumber(a.price) - priceToNumber(b.price));
+      } else if (advFilters.sort === 'price-desc') {
+        filtered.sort((a, b) => priceToNumber(b.price) - priceToNumber(a.price));
+      } else if (advFilters.sort === 'name') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      }
+      // Cap at DISPLAY_COUNT
       renderProducts(filtered.slice(0, DISPLAY_COUNT));
+      updateAdvBadge();
+    }
+
+    function updateAdvBadge() {
+      const btn = document.getElementById('adv-filter-toggle');
+      const badge = document.getElementById('adv-badge');
+      let n = 0;
+      if (advFilters.price !== 'all') n++;
+      if (advFilters.pack !== 'all') n++;
+      if (advFilters.sort !== 'random') n++;
+      badge.textContent = n > 0 ? n : '';
+      btn.classList.toggle('has-active', n > 0);
     }
   </script>
+  <script>
+  // === ADVANCED FILTERS WIRING ===
+  (function() {
+    const advToggle = document.getElementById('adv-filter-toggle');
+    const advPanel = document.getElementById('adv-filters');
+    const advReset = document.getElementById('adv-reset');
+
+    advToggle.addEventListener('click', () => {
+      const open = advPanel.classList.toggle('open');
+      advToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    advPanel.querySelectorAll('.adv-options').forEach(group => {
+      const name = group.dataset.group;
+      group.addEventListener('click', (e) => {
+        const btn = e.target.closest('.adv-chip');
+        if (!btn) return;
+        group.querySelectorAll('.adv-chip').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        advFilters[name] = btn.dataset.val;
+        applyFilters();
+      });
+    });
+
+    advReset.addEventListener('click', () => {
+      advFilters = { price: 'all', pack: 'all', sort: 'random' };
+      advPanel.querySelectorAll('.adv-options').forEach(group => {
+        group.querySelectorAll('.adv-chip').forEach(c => {
+          c.classList.toggle('active', c.dataset.val === 'all' || c.dataset.val === 'random');
+        });
+      });
+      applyFilters();
+    });
+  })();
+
+  // === CRYPTO LIVE TICKER ===
+  (function() {
+    const COINS = ['solana', 'bitcoin', 'ethereum'];
+    const URL = 'https://api.coingecko.com/api/v3/simple/price?ids=' + COINS.join(',') + '&vs_currencies=eur&include_24hr_change=true';
+
+    function fmtPrice(n) {
+      if (n >= 1000) return n.toLocaleString('de-DE', { maximumFractionDigits: 0 }) + ' €';
+      if (n >= 100) return n.toLocaleString('de-DE', { maximumFractionDigits: 1 }) + ' €';
+      if (n >= 1) return n.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + ' €';
+      return n.toLocaleString('de-DE', { maximumFractionDigits: 4 }) + ' €';
+    }
+
+    function fmtChange(n) {
+      const sign = n >= 0 ? '+' : '';
+      return sign + n.toFixed(2) + '%';
+    }
+
+    async function refreshPrices() {
+      try {
+        const res = await fetch(URL);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        COINS.forEach(coin => {
+          const card = document.querySelector('.crypto-ticker-card[data-coin="' + coin + '"]');
+          if (!card) return;
+          const d = data[coin];
+          if (!d) return;
+          card.classList.remove('loading');
+          card.querySelector('.crypto-ticker-price').textContent = fmtPrice(d.eur);
+          const changeEl = card.querySelector('.crypto-ticker-change');
+          const change = d.eur_24h_change || 0;
+          changeEl.textContent = fmtChange(change);
+          changeEl.classList.remove('positive', 'negative', 'neutral');
+          changeEl.classList.add(change > 0.01 ? 'positive' : change < -0.01 ? 'negative' : 'neutral');
+        });
+      } catch (e) {
+        console.warn('Crypto fetch failed:', e);
+      }
+    }
+    refreshPrices();
+    setInterval(refreshPrices, 60000); // refresh every 60s
+  })();
+
+  // === I18N (DE/EN) ===
+  (function() {
+    const DICT = {
+      de: {
+        'bio': '🌿 Cannabis Patient · 💰 Crypto Degen · 🎮',
+        'cannabis.title': 'Cannabis Patient',
+        'bloomwell.sub': 'Jetzt als Patient registrieren',
+        'crypto.title': 'Crypto · Trading',
+        'axiom.sub': 'Solana Trading Platform',
+        'solanaReclaim.sub': 'SOL zurückholen',
+        'gmgn.sub': 'Memecoin Tracker',
+        'asc.title': 'Amsterdam Seed Center',
+        'asc.shopTitle': 'Zum ASC Shop',
+        'asc.shopSub': 'Seeds · Strains · Zubehör',
+        'search.placeholder': 'Strain oder Produkt suchen...',
+        'search.aria': 'Produkte suchen',
+        'filter.all': 'Alle',
+        'filter.fem': 'Feminized',
+        'filter.auto': 'Autoflower',
+        'filter.access': 'Zubehör & CBD',
+        'filter.more': 'Filter',
+        'filter.price': 'Preis',
+        'filter.price.all': 'Alle',
+        'filter.pack': 'Pack-Größe',
+        'filter.pack.all': 'Alle',
+        'filter.pack.other': 'Andere',
+        'filter.sort': 'Sortierung',
+        'filter.sort.random': 'Zufall',
+        'filter.sort.priceAsc': 'Preis ↑',
+        'filter.sort.priceDesc': 'Preis ↓',
+        'filter.sort.name': 'A–Z',
+        'filter.reset': 'Filter zurücksetzen',
+        'empty.text': 'Nichts gefunden. Probier einen anderen Suchbegriff.',
+        'brands.title': 'Top Seed Banks',
+        'count': '{n} Produkte',
+      },
+      en: {
+        'bio': '🌿 Cannabis Patient · 💰 Crypto Degen · 🎮',
+        'cannabis.title': 'Cannabis Patient',
+        'bloomwell.sub': 'Register as a patient',
+        'crypto.title': 'Crypto · Trading',
+        'axiom.sub': 'Solana Trading Platform',
+        'solanaReclaim.sub': 'Reclaim your SOL',
+        'gmgn.sub': 'Memecoin Tracker',
+        'asc.title': 'Amsterdam Seed Center',
+        'asc.shopTitle': 'Visit ASC Shop',
+        'asc.shopSub': 'Seeds · Strains · Accessories',
+        'search.placeholder': 'Search strain or product...',
+        'search.aria': 'Search products',
+        'filter.all': 'All',
+        'filter.fem': 'Feminized',
+        'filter.auto': 'Autoflower',
+        'filter.access': 'Accessories & CBD',
+        'filter.more': 'Filters',
+        'filter.price': 'Price',
+        'filter.price.all': 'All',
+        'filter.pack': 'Pack size',
+        'filter.pack.all': 'All',
+        'filter.pack.other': 'Other',
+        'filter.sort': 'Sort',
+        'filter.sort.random': 'Random',
+        'filter.sort.priceAsc': 'Price ↑',
+        'filter.sort.priceDesc': 'Price ↓',
+        'filter.sort.name': 'A–Z',
+        'filter.reset': 'Reset filters',
+        'empty.text': 'Nothing found. Try a different search term.',
+        'brands.title': 'Top Seed Banks',
+        'count': '{n} products',
+      },
+    };
+
+    const SAVED = (() => {
+      try { return localStorage.getItem('lang'); } catch (e) { return null; }
+    })();
+    const BROWSER = (navigator.language || 'de').toLowerCase().startsWith('en') ? 'en' : 'de';
+    let currentLang = SAVED === 'en' || SAVED === 'de' ? SAVED : BROWSER;
+
+    function applyLang(lang) {
+      currentLang = lang;
+      const dict = DICT[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.textContent = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        const key = el.getAttribute('data-i18n-aria');
+        if (dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+      });
+      // Re-render product count if present
+      const countEl = document.getElementById('result-count');
+      if (countEl && window.__lastCount !== undefined) {
+        countEl.textContent = dict['count'].replace('{n}', window.__lastCount);
+      }
+      // Update toggle UI
+      document.querySelectorAll('#lang-toggle button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+
+    // Wire toggle
+    document.getElementById('lang-toggle').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-lang]');
+      if (!btn) return;
+      applyLang(btn.dataset.lang);
+    });
+
+    // Expose for renderProducts hook
+    window.__t = function(key, vars) {
+      let s = DICT[currentLang][key] || DICT.de[key] || key;
+      if (vars) for (const k in vars) s = s.replace('{'+k+'}', vars[k]);
+      return s;
+    };
+
+    // Apply on load
+    applyLang(currentLang);
+  })();
+  </script>
+
 </body>
 </html>
